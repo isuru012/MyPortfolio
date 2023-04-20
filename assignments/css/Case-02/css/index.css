@@ -65,7 +65,7 @@ body>section>section{
     margin-left: 320px;
     position: relative;
 }
-body>section>section>div:nth-child(1){
+body>section>section>div{
     height:300px;
     width: 100%;
     right: 10px;
