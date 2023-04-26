@@ -1,0 +1,98 @@
+body>header>div{
+    height: 30px;
+    width: 200px;
+    background-image: url("../assests/ijselogo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin: 21px;
+
+}
+body>header>nav>ul>li{
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 10px;
+
+
+}
+
+
+body>header>nav>ul>{
+    position: relative;
+
+
+
+
+
+}
+body>header>nav{
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+}
+body>header{
+    position: relative;
+    box-shadow: 1px 2px 3px 4px black;
+    height: 72px;
+
+    background: white;
+}
+body>section{
+    position: relative;
+    display: inline-block;
+
+}
+body>section>nav{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    background: purple;
+}
+body>section>nav>ul>li{
+    display: block;
+    position: relative;
+    margin-left: 20px;
+    color: #ffffff;
+    margin-top: 40px;
+}
+body>section>section{
+    height: 100vh;
+    right: 0;
+    display: inline-block;
+    margin-top: 12px;
+    margin-left: 320px;
+    position: relative;
+}
+body>section>section>div{
+    height:300px;
+    width: 100%;
+    right: 10px;
+    position: relative;
+}
+body>section>section>div>img{
+    display: inline-block;
+    position: absolute;
+    width: calc(100%/3);
+    height: 100%;
+    background: black;
+}
+body>section>section>div>img:nth-child(1){
+    right:0;
+}
+body>section>section>div>img:nth-child(2){
+    right:0;
+    left: 0;
+    margin: auto;
+}
+footer{
+    width: 98vw;
+    height: 50px;
+    background: gray;
+
+}
+footer>p{
+    margin-top: 0px;
+    text-align: center;
+}

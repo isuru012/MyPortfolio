@@ -1,0 +1,173 @@
+.mainDiv1{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: antiquewhite;
+    right: 0px;
+}
+.div1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background: red;
+}
+.div2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    background: green;
+}
+.div3{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background: gold;
+}
+.div4{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    background: deeppink;
+}
+.div1Circle{
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    background: white;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+.div1Square{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+
+    background: red;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+.mainSquare{
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    z-index: 2;
+    background: white;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+
+}
+.mainCircle{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    z-index: 3;
+    background: red;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+
+}
+.other1{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-bottom-right-radius: 100%;
+    z-index: 3;
+    background: white;
+    top: 0;
+    left: 0;
+
+
+}
+.other2{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-bottom-left-radius: 100%;
+    z-index: 3;
+    background: white;
+    top: 0;
+    right: 0;
+
+
+
+
+}
+.other3{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-top-left-radius: 100%;
+    z-index: 3;
+    background: white;
+    bottom: 0;
+    right: 0;
+
+}
+.other4{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-top-right-radius: 100%;
+    z-index: 3;
+    background: white;
+    bottom: 0;
+    left: 0;
+
+}
+.other5{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    z-index: 3;
+    background: white;
+    bottom: -75px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    /* margin-left: 30px; */
+
+}
+.other6{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    z-index: 3;
+    background-color: white;
+    top: -75px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+
+
+    /* margin-left: 30px; */
+
+}
+body {
+    overflow-x: hidden; /* hides horizontal scroll bar */
+}
