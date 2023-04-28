@@ -69,11 +69,12 @@ body>section>section>div{
     height:300px;
     width: 100%;
     right: 10px;
+    display: flex;
     position: relative;
 }
 body>section>section>div>img{
-    display: inline-block;
-    position: absolute;
+    /*display: inline-block;*/
+    /*position: absolute;*/
     width: calc(100%/3);
     height: 100%;
     background: black;
