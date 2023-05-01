@@ -1,0 +1,294 @@
+* {
+
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+*:not(i) {
+    font-family: 'Roboto Slab', serif;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 1rem 4rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+
+nav a#logo {
+    color: #000000;
+    font-weight: 700;
+}
+
+nav ul a {
+    color: #000000;
+    font-weight: 600;
+}
+
+nav ul a:hover {
+    border-bottom: 2px solid #2a5928;
+    /*font-size: 2rem;*/
+
+    color: #3FD289;
+}
+
+#logo:hover {
+    font-size: 2rem;
+}
+
+
+section#home {
+    z-index: -1;
+    position: relative;
+    /*top: 61px;*/
+    /*display: grid;
+    place-items: center;*/
+}
+
+section > h1 {
+    position: relative;
+
+    margin: 0;
+}
+
+section {
+    /*height: 100vh*/
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+#ham-menu {
+    display: none;
+}
+
+nav ul.active {
+    left: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    /*html {
+        font-size: 50%;
+    }*/
+    #ham-menu {
+        display: block;
+        color: #3FD289;
+    }
+
+    nav a#logo,
+    #ham-menu {
+        font-size: 1.8rem;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    nav ul {
+        z-index: 1;
+        background-color: #3FD289;
+        position: fixed;
+        left: -100vw;
+        top: 52.6px;
+        width: 100vw;
+        height: calc(100vh - 52.6px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transition: 1s;
+        gap: 0;
+    }
+}
+
+.container {
+    max-width: 90vw;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+.left1 {
+    width: 50%;
+    margin-top: 6%;
+    font-size: 17px;
+    letter-spacing: 1px;
+    line-height: 26px;
+}
+
+.left1 h1 {
+    font-size: 45px;
+    line-height: 80px;
+}
+
+.left1 h1 > span {
+    color: #3FD289;
+}
+
+.left1 .btnAbout {
+    background: #3FD289;
+
+    font-weight: 600;
+    /*display: inline-block;*/
+    border-radius: 30px;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: #000000;
+    white-space: nowrap;
+
+}
+
+.rightImage {
+    align-self: flex-start;
+    width: 50%;
+}
+
+#welcomeImage {
+    width: 100%;
+    height: 600px;
+}
+#aboutImage{
+    width: 100%;
+    height: 700px;
+    margin-top: -9%;
+
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap: 5px;
+}
+
+a img {
+    height: 80%;
+    width: 80%;
+}
+#wave{
+    margin-top: -175px;
+    margin-bottom: -3px;
+
+
+}
+#vector1{
+    background: #E1FCF7;
+    width: 100%;
+    height: 100%;
+}
+
+body>section:nth-child(3){
+    position: relative;
+    z-index: -1;
+
+    background:#E1FCF7;
+}
+
+.right {
+    width: 50%;
+    margin-top: 4%;
+    font-size: 17px;
+    letter-spacing: 1px;
+    line-height: 26px;
+}
+
+.right h1 {
+    font-size: 55px;
+    line-height: 80px;
+    text-align: center;
+    color: #3FD289;
+}
+.leftImage {
+    align-self: flex-start;
+    width: 50%;
+    margin-left: -35px;
+
+}
+body>section:nth-child(3)>div:nth-child(2){
+    width: 100%;
+
+}
+body>section:nth-child(3)>div:nth-child(2)>h1{
+    font-size: 55px;
+    line-height: 80px;
+    text-align: center;
+    color: #3FD289;
+
+}
+
+
+@media (min-width: 1500px) {
+    #welcomeImage {
+        width: 80%;
+        margin-left: 15%;
+
+        /*margin-left: 50px;*/
+    }
+    #aboutImage{
+        width: 80%;
+        margin-right: 15%;
+        margin-top: -9%;
+
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .left1 {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+    .right{
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+    .leftImage{
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .rightImage {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+#aboutImage{
+    width: 100%;
+}
+    #welcomeImage {
+        width: 100%;
+
+    }
+
+
+}
