@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animation</title>
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/fonts-awesome/css/all.min.css">
+    <style>
+        section{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            left: 0;
+            background: #c8ff00;
+            animation:testOne;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-delay: 1s;
+
+
+
+
+
+        }
+        section:hover{
+            animation-play-state: paused;
+        }
+
+        @keyframes testOne {
+            0%{
+                width: 100px;
+                height: 100px;
+                background: red;
+
+
+            }
+            25%{
+                width: 100px;
+                height: 100px;
+                background: green;
+                border-radius: 100%;
+                left: 50vw;
+                top: 0vh;
+            }
+            50%{
+                width: 100px;
+                height: 100px;
+                background: #006680;
+                border-radius: 100%;
+                left: 50vw;
+                top: 50vh;
+            }
+            75%{
+                width: 100px;
+                height: 100px;
+                background: #00ffdd;
+                border-radius: 100%;
+                left: 0vw;
+                top: 50vh;
+            }
+            100%{
+                width: 100px;
+                height: 100px;
+                background: #001e76;
+                top: 0vh;
+
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+
+<section>
+
+</section>
+
+</body>
+</html>
