@@ -59,7 +59,7 @@ body>section>nav>ul>li{
 }
 body>section>section{
     height: 100vh;
-    right: 0;
+right: 0;
     display: inline-block;
     margin-top: 12px;
     margin-left: 320px;
@@ -96,4 +96,58 @@ footer{
 footer>p{
     margin-top: 0px;
     text-align: center;
+}
+@media all and (max-width: 400px) {
+    body>header>div{
+
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 14px;
+
+    }
+    body>header>nav {
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: auto;
+        top: 20px;
+    }
+    body>section>nav{
+        display: none;
+    }
+    body>section>section{
+        margin-left: 20px;
+
+    }
+    body>section>section>div{
+        height:1142px;
+        width: 100%;
+        display: grid;
+        grid-template-rows: repeat(3,1fr);
+        position: relative;
+    }
+    body>section>section>div>img {
+        position: relative;
+        width: 100%;
+    }
+
+    
+}
+@media all and (min-width: 401px) and (max-width: 768px) {
+    body>section>nav {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 170px;
+        background: purple;
+    }
+    body>section>section {
+
+        margin-left: 190px;
+
+    }
+
+
 }

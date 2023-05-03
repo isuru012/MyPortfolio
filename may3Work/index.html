@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width initial scale=1">
+    <style>
+        h1{
+            color: red;
+        }
+        @media all and (min-width: 1025px) and (max-width: 1440px) {
+            h1{
+                color: #00405e;
+                background:#3FD289 ;
+                text-align: center;
+
+            }
+
+        }
+
+        @media all and (min-width: 1441px) and (max-width: 2560px) {
+            h1{
+                color: #0bed00;
+            }
+        }
+        @media all and (min-width: 769px) and (max-width: 1024px) {
+            h1{
+                color: #00e9ed;
+            }
+        }
+        @media all and (min-width: 426px) and (max-width: 768px) {
+            h1{
+                color: #0018ed;
+            }
+        }
+        @media all and (min-width: 376px) and (max-width: 425px) {
+            h1{
+                color: #fc00f4;
+            }
+        }
+        @media all and (min-width: 320px) and (max-width: 375px) {
+            h1{
+                color: #fc0000;
+            }
+        }
+
+body>div{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: #00405e;
+    margin: auto;
+    transition: 3s;
+    transition-property: left,border-radius;
+    transition-duration: 3s;
+}
+body>div:hover{
+    border-radius: 100%;
+    background: #3FD289;
+    left: 400px;
+    transition: 3s;
+    transition-property: left,border-radius;
+    transition-duration: 3s;
+
+}
+
+
+    </style>
+</head>
+<body>
+<h1>
+    Hello there
+</h1>
+<div>
+
+</div>
+</body>
+</html>
