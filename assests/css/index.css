@@ -16,6 +16,7 @@ header {
     width: 100%;
     background-color: #ffffff;
     padding: 1rem 4rem;
+    z-index: 4;
 }
 
 nav {
@@ -71,6 +72,9 @@ section > h1 {
     margin: 0;
 }
 
+section {
+    /*height: 100vh*/
+}
 
 h1 {
     font-size: 4rem;
@@ -84,12 +88,11 @@ nav ul.active {
     left: 0;
 }
 
-/*
-@media only screen and (max-width: 768px) {
+/*@media only screen and (max-width: 768px) {
     !*html {
         font-size: 50%;
     }*!
-    !*#ham-menu {
+    #ham-menu {
         display: block;
         color: #3FD289;
     }
@@ -115,29 +118,31 @@ nav ul.active {
         justify-content: space-around;
         transition: 1s;
         gap: 0;
-    }*!
-}
-*/
+    }
+}*/
 
 .container {
     max-width: 90vw;
     margin: 0 auto;
     padding: 0 20px;
 }
-.container2{
+
+.container2 {
     max-width: 60vw;
     margin: 0 auto;
     padding: 0 20px;
 
 }
-.container2>div{
+
+.container2 > div {
     padding-top: 40px;
     padding-bottom: 40px;
 }
+
 .row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
 
 }
@@ -181,15 +186,18 @@ nav ul.active {
     width: 100%;
     height: 600px;
 }
-#aboutImage{
+
+#aboutImage {
     width: 100%;
     height: 700px;
     margin-top: -9%;
+    margin-left: -30px;
 
 }
-.pentImage{
+
+.pentImage {
     display: inline-block;
-text-align: center;
+    text-align: center;
     float: right;
     margin-right: 70px;
 
@@ -201,25 +209,31 @@ text-align: center;
     align-items: center;
     margin-top: 20px;
     gap: 5px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+    z-index: 2;
 }
 
 a img {
     height: 80%;
     width: 80%;
 }
-#wave{
+
+#wave {
     margin-top: -175px;
     margin-bottom: -3px;
 
 
 }
-#vector1{
+
+#vector1 {
     background: #E1FCF7;
     width: 100%;
     height: 100%;
 }
 
-body>section:nth-child(3){
+body > section:nth-child(3) {
     position: relative;
     z-index: -1;
 
@@ -233,7 +247,8 @@ body>section:nth-child(3){
     letter-spacing: 1px;
     line-height: 26px;
 }
-.rightEdu{
+
+.rightEdu {
     width: 50%;
     font-size: 17px;
     letter-spacing: 1px;
@@ -246,43 +261,51 @@ body>section:nth-child(3){
     text-align: center;
     color: #3FD289;
 }
+
 .leftImage {
     align-self: flex-start;
     width: 50%;
-    margin-left: -35px;
+    /*margin-left: -35px;*/
 
 }
-.leftImageEdu{
+
+.leftImageEdu {
     align-self: center;
     width: 50%;
     margin-left: -35px;
     overflow: hidden;
 }
-body>section:nth-child(3)>div:nth-child(2){
+
+body > section:nth-child(3) > div:nth-child(2) {
     width: 100%;
 
 }
-body>section:nth-child(3)>div:nth-child(2)>h1{
+
+body > section:nth-child(3) > div:nth-child(2) > h1 {
     font-size: 55px;
     line-height: 80px;
     text-align: center;
     color: #3FD289;
 
 }
-.rightEdu>p{
+
+.rightEdu > p {
     font-weight: bold;
     margin: 0;
 }
-body>section:nth-child(4){
+
+body > section:nth-child(4) {
     box-shadow: 0px 11px 9px -15px #111;
 }
-body>section:nth-child(5)>div:nth-child(1)>h1{
+
+body > section:nth-child(5) > div:nth-child(1) > h1 {
     font-size: 55px;
     line-height: 80px;
     text-align: center;
     color: #3FD289;
 }
-body>section:nth-child(5)>div:nth-child(2)>p{
+
+body > section:nth-child(5) > div:nth-child(2) > p {
     font-weight: bold;
     font-size: 17px;
     letter-spacing: 1px;
@@ -291,28 +314,32 @@ body>section:nth-child(5)>div:nth-child(2)>p{
     margin-left: 20%;
     margin-right: 20%;
 }
-.rowWork{
+
+.rowWork {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    box-shadow: 1px 3px 8px -5px rgba(0, 0, 0, 0.75), 0px -4px 5px -5px rgba(0, 0, 0, 0.75);    position: relative;
+    box-shadow: 1px 3px 8px -5px rgba(0, 0, 0, 0.75), 0px -4px 5px -5px rgba(0, 0, 0, 0.75);
+    position: relative;
     z-index: 3;
     margin-top: 100px;
 
 }
 
-.rowWork>div{
+.rowWork > div {
     width: 25%;
 }
-.rowWork>div>h1{
+
+.rowWork > div > h1 {
     font-size: 55px;
     line-height: 50px;
     text-align: center;
     color: #3FD289;
     margin-bottom: 0;
 }
-.rowWork>div>p{
+
+.rowWork > div > p {
     font-weight: bold;
     font-size: 17px;
     letter-spacing: 1px;
@@ -321,16 +348,19 @@ body>section:nth-child(5)>div:nth-child(2)>p{
     word-wrap: break-word;
 
 }
-#workWhiteSpace{
+
+#workWhiteSpace {
     width: 100%;
     height: 100px;
     background: white;
 }
-body>section:nth-child(6){
+
+body > section:nth-child(6) {
     height: 1600px;
     background: #E1FCF7;
 }
-.rowProject>h1{
+
+.rowProject > h1 {
     font-size: 55px;
     line-height: 50px;
     text-align: center;
@@ -338,21 +368,39 @@ body>section:nth-child(6){
     margin-bottom: 0;
     padding-top: 40px;
 }
-body>section:nth-child(6)>div:nth-child(2){
-    width: 100%;
-    height: 350px;
+
+body > section:nth-child(6) > div:nth-child(2) {
+    /*width: 100%;
+    height: 350px;*/
     position: relative;
     padding-left: 40px;
     padding-right: 40px;
     top: 5%;
-    display: grid;
-    grid-template-rows: repeat(1,1fr);
-    grid-template-columns: repeat(3,1fr);
-    grid-gap: 80px;}
-body>section:nth-child(6)>div:nth-child(2)>div{
+    display: flex;
+    /* grid-template-rows: repeat(1, 1fr); */
+    /* grid-template-columns: repeat(3, 1fr); */
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+body > section:nth-child(6) > div:nth-child(2) > div {
     background-color: white;
     border-radius: 10px;
+    width: 30%;
+    height: 100%;
     box-shadow: 0px 3px 5px 2px rgb(0 0 0 / 30%);
+}
+
+body > section:nth-child(6) >div:nth-child(2)>div>p{
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    word-wrap: break-word;
+    overflow: hidden;
+
+
+
 }
 
 @media (min-width: 1500px) {
@@ -362,7 +410,8 @@ body>section:nth-child(6)>div:nth-child(2)>div{
 
         /*margin-left: 50px;*/
     }
-    #aboutImage{
+
+    #aboutImage {
         width: 80%;
         margin-right: 15%;
         margin-top: -9%;
@@ -372,6 +421,58 @@ body>section:nth-child(6)>div:nth-child(2)>div{
 }
 
 @media (max-width: 768px) {
+
+    .left1 {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .left1 h1 {
+        font-size: 35px;
+        line-height: 80px;
+    }
+
+    .right {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .leftImage {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .rightImage {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    #aboutImage {
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    #welcomeImage {
+        width: 100%;
+
+    }
+
+    .pentImage {
+        display: inline-block;
+        text-align: center;
+        float: right;
+        margin-right: 0px;
+
+
+    }
+
+    .rowWork > div {
+        width: 50%;
+    }
+
     #ham-menu {
         display: block;
         color: #3FD289;
@@ -399,44 +500,54 @@ body>section:nth-child(6)>div:nth-child(2)>div{
         transition: 1s;
         gap: 0;
     }
+    body > section:nth-child(6) > div:nth-child(2) > div {
 
-    .left1 {
-        width: 100%;
-        padding: 0 15px;
-        box-sizing: border-box;
-    }
-    .right{
-        width: 100%;
-        padding: 0 15px;
-        box-sizing: border-box;
-    }
-    .leftImage{
-        width: 100%;
-        padding: 0 15px;
-        box-sizing: border-box;
+        width: 60%;
+
     }
 
-    .rightImage {
-        width: 100%;
-        padding: 0 15px;
-        box-sizing: border-box;
-    }
-#aboutImage{
-    width: 100%;
 }
+
+@media all and (max-width: 425px ) {
+    #aboutImage {
+        height: 530px;
+    }
+
     #welcomeImage {
-        width: 100%;
+        height: 400px;
+    }
+
+    .right h1 {
+        font-size: 40px;
 
     }
 
-    .pentImage{
-        display: inline-block;
-        text-align: center;
-        float: right;
-        margin-right: 0px;
-
+    body > section:nth-child(3) > div:nth-child(2) > h1 {
+        font-size: 40px;
 
     }
 
+    body > section:nth-child(5) > div:nth-child(1) > h1 {
+        font-size: 40px;
 
+    }
+
+    .rowWork > div > h1 {
+        font-size: 40px;
+
+    }
+
+    .rowWork > div > p {
+        font-size: 13px;
+
+    }
+    .rowProject > h1 {
+        font-size: 40px;
+
+    }
+    body > section:nth-child(6) > div:nth-child(2) > div {
+
+        width: 80%;
+
+    }
 }
