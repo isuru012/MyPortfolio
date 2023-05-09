@@ -5,6 +5,7 @@
 
 html {
     font-size: 62.5%;
+    /*scroll-behavior: smooth;*/
 }
 
 *:not(i) {
@@ -18,6 +19,7 @@ header {
     padding: 1rem 4rem;
     z-index: 4;
 }
+
 
 nav {
     display: flex;
@@ -798,6 +800,12 @@ form>div:nth-child(4){
         justify-content: space-around;
         transition: 1s;
         gap: 0;
+    }
+    nav ul a:hover {
+        border-bottom: 2px solid #2a5928;
+        /*font-size: 2rem;*/
+
+        color: #ffffff;
     }
 
     body > section:nth-child(6) > div:nth-child(2) > div {
