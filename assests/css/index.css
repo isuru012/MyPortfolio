@@ -2,12 +2,40 @@
 
     box-sizing: border-box;
 }
-
+body{
+    overflow-x: hidden;
+}
 html {
     font-size: 62.5%;
-    /*scroll-behavior: smooth;*/
+    scroll-behavior: smooth;
+    scroll-padding-top:var(--scroll-padding,50px);
+}
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.loader {
+    border: 10px solid #f3f3f3;
+    border-top: 30px solid #3FD289;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 *:not(i) {
     font-family: 'Roboto Slab', serif;
 }
@@ -150,6 +178,7 @@ nav ul.active {
 }
 
 .left1 {
+    position: relative;
     width: 50%;
     margin-top: 6%;
     font-size: 17px;
@@ -211,6 +240,8 @@ nav ul.active {
 }
 
 #welcomeImage {
+    position: relative;
+    z-index: -4;
     width: 100%;
     height: 600px;
 }
@@ -249,6 +280,7 @@ a img {
 }
 
 #wave {
+
     margin-top: -175px;
     margin-bottom: -3px;
 
@@ -261,9 +293,9 @@ a img {
     height: 100%;
 }
 
-body > section:nth-child(3) {
+body>section:nth-child(4) {
     position: relative;
-    z-index: -1;
+    /*z-index: -1;*/
 
     background: #E1FCF7;
 }
@@ -277,11 +309,13 @@ body > section:nth-child(3) {
 }
 
 .rightEdu {
+    position: relative;
     width: 50%;
     font-size: 17px;
     letter-spacing: 1px;
     line-height: 26px;
 }
+
 
 .right h1 {
     font-size: 55px;
@@ -298,18 +332,19 @@ body > section:nth-child(3) {
 }
 
 .leftImageEdu {
+    position: relative;
     align-self: center;
     width: 50%;
     margin-left: -35px;
     overflow: hidden;
 }
 
-body > section:nth-child(3) > div:nth-child(2) {
+body>section:nth-child(4)>div:nth-child(2) {
     width: 100%;
 
 }
 
-body > section:nth-child(3) > div:nth-child(2) > h1 {
+body>section:nth-child(4)>div:nth-child(2)>h1 {
     font-size: 55px;
     line-height: 80px;
     text-align: center;
@@ -317,23 +352,23 @@ body > section:nth-child(3) > div:nth-child(2) > h1 {
 
 }
 
-.rightEdu > p {
+.rightEdu>p {
     font-weight: bold;
     margin: 0;
 }
 
-body > section:nth-child(4) {
+body>section:nth-child(5) {
     box-shadow: 0px 11px 9px -15px #111;
 }
 
-body > section:nth-child(5) > div:nth-child(1) > h1 {
+body>section:nth-child(6)>div:nth-child(1)>h1 {
     font-size: 55px;
     line-height: 80px;
     text-align: center;
     color: #3FD289;
 }
 
-body > section:nth-child(5) > div:nth-child(2) > p {
+body>section:nth-child(6)>div:nth-child(2)>p {
     font-weight: bold;
     font-size: 17px;
     letter-spacing: 1px;
@@ -343,7 +378,7 @@ body > section:nth-child(5) > div:nth-child(2) > p {
     margin-right: 20%;
 }
 
-.rowWork {
+.rowWork{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -355,11 +390,11 @@ body > section:nth-child(5) > div:nth-child(2) > p {
 
 }
 
-.rowWork > div {
+.rowWork>div {
     width: 25%;
 }
 
-.rowWork > div > h1 {
+.rowWork>div>h1 {
     font-size: 55px;
     line-height: 50px;
     text-align: center;
@@ -397,7 +432,7 @@ body > section:nth-child(6) {
     padding-top: 40px;
 }
 
-body > section:nth-child(6) > div:nth-child(2) {
+body > section:nth-child(7) > div:nth-child(2) {
     /*width: 100%;
     height: 350px;*/
     position: relative;
@@ -413,7 +448,7 @@ body > section:nth-child(6) > div:nth-child(2) {
     padding-bottom: 120px;
 }
 
-body > section:nth-child(6) > div:nth-child(2) > div {
+body > section:nth-child(7) > div:nth-child(2) > div {
     background-color: white;
     border-radius: 10px;
     width: 30%;
@@ -427,12 +462,12 @@ body > section:nth-child(6) > div:nth-child(2) > div {
 
 }
 
-body > section:nth-child(6) > div:nth-child(2) > div > img {
+body > section:nth-child(7) > div:nth-child(2) > div > img {
     width: 100px;
     height: 100px;
 }
 
-body > section:nth-child(6) > div:nth-child(2) > div > p {
+body>section:nth-child(7)>div:nth-child(2)>div>p{
     font-weight: bold;
     font-size: 25px;
     text-align: center;
@@ -599,6 +634,7 @@ footer {
 }
 
 .form-group {
+    position: relative;
     margin-bottom: 20px;
 }
 
@@ -657,6 +693,7 @@ input[type="email"],
     word-wrap: break-word;
 }
 .contact-info {
+    position: relative;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -685,6 +722,7 @@ form>div:nth-child(4){
 
 @media (min-width: 1500px) {
     #welcomeImage {
+        position: relative;
         width: 80%;
         margin-left: 15%;
 
@@ -717,6 +755,11 @@ form>div:nth-child(4){
     }
     .row2{
         justify-content: space-around;
+    }
+    #welcomeImage,.left1,.aboutmeImage,.aboutme,.aboutmepara,.educationh1,.leftImageEdu,.rightEdu,
+    .workh1,.workpara,.workammount,.projectsh1,.projectdivg1,.projectdivg2,.projectdivg3,
+    .certificatesh1,.galleryh1,.gall1,.gall4,.contacth1,.form-group,.contact-info{
+        max-width: 100%;
     }
 
 }
@@ -808,7 +851,7 @@ form>div:nth-child(4){
         color: #ffffff;
     }
 
-    body > section:nth-child(6) > div:nth-child(2) > div {
+    body > section:nth-child(7) > div:nth-child(2) > div {
 
         width: 60%;
 
@@ -834,12 +877,12 @@ form>div:nth-child(4){
 
     }
 
-    body > section:nth-child(3) > div:nth-child(2) > h1 {
+    body > section:nth-child(4) > div:nth-child(2) > h1 {
         font-size: 40px;
 
     }
 
-    body > section:nth-child(5) > div:nth-child(1) > h1 {
+    body > section:nth-child(6) > div:nth-child(1) > h1 {
         font-size: 40px;
 
     }
@@ -869,13 +912,13 @@ form>div:nth-child(4){
 
     }
 
-    body > section:nth-child(6) > div:nth-child(2) > div {
+    body > section:nth-child(7) > div:nth-child(2) > div {
 
         width: 80%;
 
     }
 
-    body > section:nth-child(6) > div:nth-child(2) > div > p {
+    body > section:nth-child(7) > div:nth-child(2) > div > p {
 
         font-size: 20px;
 
