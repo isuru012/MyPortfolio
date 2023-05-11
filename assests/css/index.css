@@ -4,6 +4,7 @@
 }
 body{
     overflow-x: hidden;
+
 }
 html {
     font-size: 62.5%;
@@ -864,6 +865,12 @@ form>div:nth-child(4){
 }
 
 @media all and (max-width: 425px ) {
+    .left1 h1 {
+        margin-top: 50px;
+        font-size: 17px;
+        line-height: 40px;
+
+    }
     #aboutImage {
         height: 530px;
     }
