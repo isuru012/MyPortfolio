@@ -224,3 +224,10 @@ function sendConfirmation() {
         message => alert("Done")
     );
 }
+var sr = ScrollReveal();
+
+sr.reveal('.galleryh1', {
+    mobile: {
+        reveal: false
+    }
+});
