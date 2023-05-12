@@ -3,8 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <style>
+    body>div:nth-child(1){
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        animation-name: drop;
+        animation-duration: 2S;
+        animation-iteration-count: infinite;
+        border-radius: 100%;
+        border: red 2px solid;
+
+    }
+    body>div:nth-child(2){
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        animation-name: drop2;
+        animation-duration: 4S;
+        animation-iteration-count: infinite;
+        /*animation-timing-function: linear;*/
+        border-radius: 100%;
+        border: red 2px solid;
+    }
+
+    @keyframes drop {
+    from{
+        width: 1px;
+        height: 1px;
+    }
+        to{
+            width: 200px;
+            height: 200px;
+            opacity: 0;
+        }
+    }
+    @keyframes drop2 {
+        from{
+            width: 1px;
+            height: 1px;
+        }
+        to{
+            width: 200px;
+            height: 200px;
+            opacity: 0;
+        }
+    }
+    </style>
 </head>
 <body>
+<div>
 
+</div>
+<div>
+
+</div>
 </body>
 </html>
