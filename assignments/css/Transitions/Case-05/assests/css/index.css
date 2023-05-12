@@ -1,0 +1,43 @@
+img{
+    width: 40px;
+    height: 40px;
+}
+section{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    top:0;
+    bottom: 0;
+    margin: auto;
+    gap: 30px;
+
+
+}
+section>div{
+    position: relative;
+    background: #ee5eee;
+    width: 150px;
+    left: -110px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transition: 2s;
+    transition-property: left;
+    box-shadow: 0px 3px 5px 2px rgb(0 0 0 / 30%);
+
+
+
+}
+section>div>img{
+
+}
+section>div>p{
+
+}
+section>div:hover{
+    left: -20px;
+
+    transition: 2s;
+    transition-property: left;
+}

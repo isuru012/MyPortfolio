@@ -1,0 +1,61 @@
+body{
+    background: #00ffdd;
+}
+
+body>section>div:nth-child(2){
+    position: absolute;
+top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 200px;
+    width: 200px;
+    margin: auto;
+    border-radius: 100%;
+    border-top: 15px solid #ff0000;
+    border-bottom: 15px solid #ffffff;
+    border-left: 15px solid white;
+    border-right: 15px solid white;
+
+
+
+}
+body>section>div:nth-child(2):hover{
+    cursor: pointer;
+    animation: spinBorder 3s linear normal;
+}
+
+
+body>section>div:nth-child(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 200px;
+    width: 200px;
+    margin: auto;
+    border-radius: 100%;
+    /*border-top: 15px solid #ff0000;*/
+    /*border-bottom: 15px solid #ffffff;*/
+    /*border-left: 15px solid white;*/
+    /*border-right: 15px solid white;*/
+
+    background: #5b5656;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+@keyframes spinBorder {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
