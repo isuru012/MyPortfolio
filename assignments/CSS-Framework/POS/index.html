@@ -14,6 +14,15 @@
     <link rel="stylesheet" href="css/style.css"/>
     <title>Rangi BookShop</title>
     <link rel="stylesheet" href="css/bootstrap.css">
+    <script>
+        window.onload = function () {
+            document.getElementById("dashboard").style.display = "block";
+            document.getElementById('customers').style.display = "none";
+            document.getElementById('items').style.display = "none";
+            document.getElementById('orders').style.display = "none";
+            document.getElementById('newOrder').style.display = "none";
+        };
+    </script>
 </head>
 
 <body>
@@ -27,30 +36,27 @@
             <!--            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i-->
             <!--                    class="fas fa-tachometer-alt me-2"></i>Dashboard</a>-->
             <a href="#dashboard"
-               class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover"
-               onclick="loadSection('dashboard')"><i
+               class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover" id="dash"
+               onclick="loadSection('dashboard');anchorClick('dashboard');"><i
                     class="fa-solid fa-chart-line" style="color: #009d63; margin-right: 5px"></i>Dashborad</a>
             <a href="#customers"
-               class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover"
-               onclick="loadSection('customers')"><i
+               class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover" id="cus"
+               onclick="loadSection('customers');anchorClick('customers');"><i
                     class="fas fa-solid fa-user-group" style="color: #009d63; margin-right: 5px;"></i>Customers</a>
-            <a href="#items" class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover"
-               onclick="loadSection('items')"><i
+            <a href="#items" class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover" id="itm"
+               onclick="loadSection('items');anchorClick('items');"><i
                     class="fa-solid fa-sitemap" style="color: #009d63; margin-right: 5px"></i>Items</a>
-            <a href="#orders" class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover"
-               onclick="loadSection('orders')"><i
+            <a href="#orders" class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover" id="ordrs"
+               onclick="loadSection('orders');anchorClick('orders')"><i
                     class="fa-solid fa-coins" style="color: #009d63;  margin-right: 5px"></i>Orders</a>
             <a href="#newOrder"
-               class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover"
-               onclick="loadSection('newOrder')"><i
+               class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover" id="newOrdrs"
+               onclick="loadSection('newOrder');anchorClick('newOrder')"><i
                     class="fa-solid fa-cart-plus" style="color: #009d63;  margin-right: 5px"></i>NewOrder</a>
-///////////////////////////////////////////////here/////////////////////////////////
 
-            class="menu-toggle"
-            <a href="#newOrder"
-               class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover"
-               onclick="loadSection('newOrder')"><i
-                    class="fa-solid fa-cart-plus" style="color: #009d63;  margin-right: 5px"></i>Hide</a>
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold hideNav"
+               id="menu-togle"><i
+                    class="fa-solid fa-eye-slash" style="color: #9d9000;  margin-right: 5px"></i>Hide</a>
             <!--<a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                     class="fas fa-gift me-2"></i>Products</a>
             <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
@@ -67,7 +73,7 @@
     <div id="page-content-wrapper">
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
             <div class="d-flex align-items-center">
-                <i class="fas fa-align-left primary-text fs-4 me-3" class="menu-toggle"></i>
+                <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
                 <h2 class="fs-2 m-0" id="h2Ele">Dashboard</h2>
             </div>
 
@@ -231,13 +237,296 @@
             </div>
         </section>
         <section id="customers">
+            <div class="txtCus">
+                <div class="input-group mb-3 myCustxt">
+                    <span class="input-group-text txtColour" id="inputGroup-sizing-default">Name</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 myCustxt">
+                    <span class="input-group-text txtColour" id="inputGroup-sizing-default2">Address</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 myCustxt ">
+                    <span class="input-group-text txtColour" id="inputGroup-sizing-default3">Phone_Number</span>
+                    <input type="number" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+            <div class="btnCusGroup">
+
+
+                <button type="button" class="btn btn-outline-danger btnDel"><i class="fa-solid fa-trash "
+                                                                               style="color: #d50101; margin-right: 5px"></i>Delete
+                </button>
+                <button type="button" class="btn btn-outline-warning btnUpd"><i class="fa-solid fa-pencil"
+                                                                                style="color: #ffc107; margin-right: 5px"></i>Update
+                </button>
+                <button type="button" class="btn btn-outline-success btnAdd"><i class="fa-solid fa-plus"
+                                                                                style="color: #198754;margin-right: 5px"></i>Add
+                </button>
+
+            </div>
+
+
+            <div class="row my-5 py-4 cusTable">
+
+                <!--                <h3 class="fs-4 mb-3">Customers</h3>-->
+
+                <div class="col">
+                    <table id="example2" class="table bg-white rounded   table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col" width="50">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">PhoneNumber</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Jonny</td>
+                            <td>Galle</td>
+                            <td>0712785657</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Kenny</td>
+                            <td>Colombo</td>
+                            <td>0775247898</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Jenny</td>
+                            <td>Kalutara</td>
+                            <td>0702456789</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Isuru</td>
+                            <td>Gampaha</td>
+                            <td>0745896748</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Nuwanvi</td>
+                            <td>Galle</td>
+                            <td>0768459787</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Thinusha</td>
+                            <td>Wamduramba</td>
+                            <td>0775654891</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>Chathuska</td>
+                            <td>Kurunagala</td>
+                            <td>0771265482</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>Ishan</td>
+                            <td>Ihalagoda</td>
+                            <td>0718956458</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>Sarindu</td>
+                            <td>Hiyarea</td>
+                            <td>0752486965</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">10</th>
+                            <td>Rusiru</td>
+                            <td>Ahangama</td>
+                            <td>0723546968</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">11</th>
+                            <td>Suhan</td>
+                            <td>Unawatuna</td>
+                            <td>07156489793</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">12</th>
+                            <td>Dushan</td>
+                            <td>Baddegama</td>
+                            <td>07124564894</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
         </section>
         <section id="items">
+            <div class="txtCus">
+                <div class="input-group mb-3 myCustxt">
+                    <span class="input-group-text txtColour" >Item_Name</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 myCustxt">
+                    <span class="input-group-text txtColour" >Batch_Number</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default" disabled>
+                </div>
+                <div class="input-group mb-3 myCustxt ">
+                    <span class="input-group-text txtColour">Quantity_On_Hand</span>
+                    <input type="number" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 myCustxt ">
+                    <span class="input-group-text txtColour">Unit_Price</span>
+                    <input type="number" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 myCustxt ">
+                    <span class="input-group-text txtColour">Discounts</span>
+                    <input type="number" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+            <div class="btnCusGroup">
+
+
+                <button type="button" class="btn btn-outline-danger btnDel"><i class="fa-solid fa-trash "
+                                                                               style="color: #d50101; margin-right: 5px"></i>Delete
+                </button>
+                <button type="button" class="btn btn-outline-warning btnUpd"><i class="fa-solid fa-pencil"
+                                                                                style="color: #ffc107; margin-right: 5px"></i>Update
+                </button>
+                <button type="button" class="btn btn-outline-success btnAdd"><i class="fa-solid fa-plus"
+                                                                                style="color: #198754;margin-right: 5px"></i>Add
+                </button>
+
+            </div>
+
+
+            <div class="row my-5 py-4 cusTable">
+
+                <!--                <h3 class="fs-4 mb-3">Customers</h3>-->
+
+                <div class="col">
+                    <table id="example3" class="table bg-white rounded table-hover table-striped table-responsive">
+                        <thead>
+                        <tr>
+                            <th scope="col" width="50">#</th>
+                            <th scope="col">Item_Name</th>
+                            <th scope="col">Batch_Number</th>
+                            <th scope="col">Quantity_On_Hand</th>
+                            <th scope="col">Unit_Price</th>
+                            <th scope="col">Discounts</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Pen</td>
+                            <td>1</td>
+                            <td>100</td>
+                            <td>50</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Pencil</td>
+                            <td>1</td>
+                            <td>150</td>
+                            <td>20</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Book 120pages</td>
+                            <td>1</td>
+                            <td>150</td>
+                            <td>200</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Gum</td>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>80</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>NewsPaper</td>
+                            <td>1</td>
+                            <td>10</td>
+                            <td>60</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Eraser</td>
+                            <td>1</td>
+                            <td>20</td>
+                            <td>40</td>
+                            <td>0</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
         </section>
         <section id="orders">
+            <div class="row my-5 py-4 cusTable">
 
+                <!--                <h3 class="fs-4 mb-3">Customers</h3>-->
+
+                <div class="col">
+                    <table id="example4" class="table bg-white rounded table-hover table-striped table-responsive">
+                        <thead>
+                        <tr>
+                            <th scope="col" width="50">#</th>
+                            <th scope="col">Order_ID</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Quantity_Purchased</th>
+                            <th scope="col">Selling_Unit_Price</th>
+                            <th scope="col">Total_Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>1</td>
+                            <td>2023.5.17</td>
+                            <td>2</td>
+                            <td>100</td>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>2</td>
+                            <td>2023.4.17</td>
+                            <td>4</td>
+                            <td>80</td>
+                            <td>320</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>3</td>
+                            <td>2023.5.13</td>
+                            <td>6</td>
+                            <td>10</td>
+                            <td>60</td>
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </section>
         <section id="newOrder">
 
@@ -263,6 +552,13 @@
         el.classList.toggle("toggled");
     };
 
+    var el2 = document.getElementById("wrapper");
+    var toggleButton2 = document.getElementById("menu-togle");
+
+    toggleButton2.onclick = function () {
+        el2.classList.toggle("toggled");
+    };
+
     $(document).ready(function () {
         $('#example').DataTable({
             pageLength: 5,
@@ -273,6 +569,115 @@
         });
 
     });
+    $(document).ready(function () {
+        $('#example2').DataTable({
+            pageLength: 5,
+            lengthMenu: [
+                [5, 10, 25, 50, -1],
+                ['5', '10', '25', '50', 'All']
+            ]
+        });
+
+    });
+    $(document).ready(function () {
+        $('#example3').DataTable({
+            pageLength: 5,
+            // responsive: true,
+            scrollX: true,
+            scrollXInner: '100%',
+
+
+            // scrollHeadInner: '100%',
+
+            lengthMenu: [
+                [5, 10, 25, 50, -1],
+                ['5', '10', '25', '50', 'All']
+            ]
+        });
+    });
+    $(document).ready(function () {
+        $('#example4').DataTable({
+            pageLength: 5,
+            // responsive: true,
+            scrollX: true,
+            scrollXInner: '100%',
+            // scrollHeadInner: '100%',
+            lengthMenu: [
+                [5, 10, 25, 50, -1],
+                ['5', '10', '25', '50', 'All']
+            ]
+        });
+    });
+
+
+
+    function anchorClick(anchorId) {
+        if (anchorId === 'dashboard') {
+            document.getElementById('dash').style.setProperty("background-color", "#BFF5DC", "important");
+            document.getElementById('cus').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('itm').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('ordrs').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('newOrdrs').style.setProperty("background-color", "#ffffff", "important");
+
+            document.getElementById('dash').style.setProperty("color", "#03a293");
+            document.getElementById('cus').style.setProperty("color", "#000000");
+            document.getElementById('itm').style.setProperty("color", "#000000");
+            document.getElementById('ordrs').style.setProperty("color", "#000000");
+            document.getElementById('newOrdrs').style.setProperty("color", "#000000");
+
+        }else if (anchorId==='customers'){
+            document.getElementById('dash').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('cus').style.setProperty("background-color", "#BFF5DC", "important");
+            document.getElementById('itm').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('ordrs').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('newOrdrs').style.setProperty("background-color", "#ffffff", "important");
+
+            document.getElementById('dash').style.setProperty("color", "#000000");
+            document.getElementById('cus').style.setProperty("color", "#03a293");
+            document.getElementById('itm').style.setProperty("color", "#000000");
+            document.getElementById('ordrs').style.setProperty("color", "#000000");
+            document.getElementById('newOrdrs').style.setProperty("color", "#000000");
+        }
+        else if (anchorId==='items'){
+            document.getElementById('dash').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('cus').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('itm').style.setProperty("background-color", "#BFF5DC", "important");
+            document.getElementById('ordrs').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('newOrdrs').style.setProperty("background-color", "#ffffff", "important");
+
+            document.getElementById('dash').style.setProperty("color", "#000000");
+            document.getElementById('cus').style.setProperty("color", "#000000");
+            document.getElementById('itm').style.setProperty("color", "#03a293");
+            document.getElementById('ordrs').style.setProperty("color", "#000000");
+            document.getElementById('newOrdrs').style.setProperty("color", "#000000");
+        }
+        else if (anchorId==='orders'){
+            document.getElementById('dash').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('cus').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('itm').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('ordrs').style.setProperty("background-color", "#BFF5DC", "important");
+            document.getElementById('newOrdrs').style.setProperty("background-color", "#ffffff", "important");
+
+            document.getElementById('dash').style.setProperty("color", "#000000");
+            document.getElementById('cus').style.setProperty("color", "#000000");
+            document.getElementById('itm').style.setProperty("color", "#000000");
+            document.getElementById('ordrs').style.setProperty("color", "#03a293");
+            document.getElementById('newOrdrs').style.setProperty("color", "#000000");
+        }
+        else if (anchorId==='newOrder'){
+            document.getElementById('dash').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('cus').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('itm').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('ordrs').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('newOrdrs').style.setProperty("background-color", "#BFF5DC", "important");
+
+            document.getElementById('dash').style.setProperty("color", "#000000");
+            document.getElementById('cus').style.setProperty("color", "#000000");
+            document.getElementById('itm').style.setProperty("color", "#000000");
+            document.getElementById('ordrs').style.setProperty("color", "#000000");
+            document.getElementById('newOrdrs').style.setProperty("color", "#03a293");
+        }
+    }
 
     function loadSection(sectionId) {
         if (sectionId === 'dashboard') {
@@ -292,7 +697,7 @@
             document.getElementById('newOrder').style.display = "none";
             document.getElementById('h2Ele').textContent = "Customers";
 
-        }else if (sectionId=='items'){
+        } else if (sectionId == 'items') {
             document.getElementById('dashboard').style.display = "none";
             document.getElementById('customers').style.display = "none";
             document.getElementById('items').style.display = "block";
@@ -300,7 +705,7 @@
             document.getElementById('newOrder').style.display = "none";
             document.getElementById('h2Ele').textContent = 'Items';
 
-        }else if (sectionId=='orders'){
+        } else if (sectionId == 'orders') {
             document.getElementById('dashboard').style.display = "none";
             document.getElementById('customers').style.display = "none";
             document.getElementById('items').style.display = "none";
@@ -308,7 +713,7 @@
             document.getElementById('newOrder').style.display = "none";
             document.getElementById('h2Ele').textContent = "Orders";
 
-        }else if (sectionId=='newOrder'){
+        } else if (sectionId == 'newOrder') {
             document.getElementById('dashboard').style.display = "none";
             document.getElementById('customers').style.display = "none";
             document.getElementById('items').style.display = "none";
@@ -317,8 +722,6 @@
             document.getElementById('h2Ele').textContent = "NewOrder";
 
         }
-
-
 
 
     }

@@ -63,7 +63,11 @@
     margin-left: 0;
 }
 
-.menu-toggle {
+#menu-toggle {
+    cursor: pointer;
+}
+
+#menu-togle {
     cursor: pointer;
 }
 
@@ -79,11 +83,17 @@
     border: none;
 }
 
-.navHover:hover{
+.hideNav:hover {
+    color: #9d9000 !important;
+    font-size: 1.2rem;
+}
+
+.navHover:hover {
     color: #03a293 !important;
     font-size: 1.2rem !important;
 }
-.logout:hover{
+
+.logout:hover {
     color: #ff0000 !important;
     font-size: 1.2rem !important;
 }
@@ -92,38 +102,103 @@ table {
     box-shadow: 1px 4px 14px 1px rgba(0, 0, 0, 0.2) !important;
 }
 
-table>tbody>tr:nth-child(odd) {
+table > tbody > tr:nth-child(odd) {
     background-color: #cce5d0;
 }
 
-table>tbody>tr:hover {
+table > tbody > tr:hover {
     background-color: #009d63 !important;
     cursor: pointer;
 }
-.cusIcon{
+
+.cusIcon {
     background-color: #f3c5aa;
     color: #da6800;
 }
-.salIcon{
+
+.salIcon {
     background-color: #fcfcce;
     color: #dad600;
 }
-.increIcon{
+
+.increIcon {
     background-color: #f5c9c9;
     color: #e50000;
 }
-.txtIncrease{
+
+.txtIncrease {
     color: #e50000;
 }
-.txtCustomers{
+
+.txtCustomers {
     color: #da6800;
 }
-.txtSales{
+
+.txtSales {
     color: #dad600;
 }
-.txtProducts{
+
+.txtProducts {
     color: #009D63FF;
 }
+
+.myCustxt {
+    width: 420px !important;
+
+}
+
+.txtCus {
+    position: relative;
+    top: 50px;
+    left: 40px;
+    right: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 95%;
+
+}
+
+.txtColour {
+    background-color: #31dfa3 !important;
+    font-weight: bold !important;
+}
+
+.btnCusGroup {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: flex-end;
+    top: 60px;
+
+    width: 97.5%;
+    gap: 25px;
+}
+
+.btnDel:hover .fa-trash {
+    color: white !important;
+}
+
+.btnUpd:hover .fa-pencil {
+    color: #000000 !important;
+}
+
+.btnAdd:hover .fa-plus {
+    color: white !important;
+}
+
+.cusTable {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.active > .page-link {
+    background-color: #009D63FF !important;
+    border: #009D63FF;
+}
+
 
 @media all and (min-width: 1200px) {
 
@@ -143,8 +218,88 @@ table>tbody>tr:hover {
         margin-left: -15rem;
     }
 }
-@media all and (max-width: 425px){
-    tr,th{
-        font-size: 0.6rem !important;
+
+/*@media all and (max-width: 850px) {
+    .dataTables_wrapper {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .dataTables_scrollHeadInner {
+        padding-right: 0;
+    }
+
+    .dataTables_scrollBody {
+        max-width: 100%;
+    }
+
+    .dataTables_scrollFootInner {
+        padding-right: 0;
+    }
+
+    .dataTables_filter input {
+        width: 100%;
+    }
+
+    .dataTables_length select {
+        width: 100%;
+    }
+
+}*/
+
+
+@media all and (max-width: 575px) {
+    .myCustxt {
+        width: 300px !important;
+
+
+    }
+
+    .txtColour {
+        font-size: 0.9rem !important;
+
+
+    }
+
+    .txtCus {
+        left: 3%;
+        right: unset;
+        width: 90%;
+    }
+
+}
+
+@media all and (max-width: 425px) {
+
+    tr, th {
+        font-size: 0.8rem !important;
+    }
+
+    .btnCusGroup {
+        width: 89%;
+        left: 5%;
+        flex-direction: column;
+
+    }
+
+    .cusTable {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+
+}
+
+@media all and (max-width: 320px) {
+    ul li a {
+        padding: 5px !important;
+    }
+
+    th, td {
+        padding: 3px !important;
+    }
+
+    tr, th {
+        font-size: 0.7rem !important;
     }
 }
