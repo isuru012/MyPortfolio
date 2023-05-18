@@ -9,20 +9,15 @@
     <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.bootstrap5.min.css">
     <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR0eTJOJMz4+oPBQ==" crossorigin="anonymous" />-->
 
     <link rel="stylesheet" href="css/style.css"/>
     <title>Rangi BookShop</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <script>
-        window.onload = function () {
-            document.getElementById("dashboard").style.display = "block";
-            document.getElementById('customers').style.display = "none";
-            document.getElementById('items').style.display = "none";
-            document.getElementById('orders').style.display = "none";
-            document.getElementById('newOrder').style.display = "none";
-        };
-    </script>
+
+    <link rel="stylesheet" href="css/normalize.css">
 </head>
 
 <body>
@@ -35,21 +30,23 @@
         <div class="list-group list-group-flush my-3">
             <!--            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i-->
             <!--                    class="fas fa-tachometer-alt me-2"></i>Dashboard</a>-->
-            <a href="#dashboard"
+            <a href="#"
                class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover" id="dash"
                onclick="loadSection('dashboard');anchorClick('dashboard');"><i
                     class="fa-solid fa-chart-line" style="color: #009d63; margin-right: 5px"></i>Dashborad</a>
-            <a href="#customers"
+            <a href="#"
                class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover" id="cus"
                onclick="loadSection('customers');anchorClick('customers');"><i
                     class="fas fa-solid fa-user-group" style="color: #009d63; margin-right: 5px;"></i>Customers</a>
-            <a href="#items" class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover" id="itm"
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover"
+               id="itm"
                onclick="loadSection('items');anchorClick('items');"><i
                     class="fa-solid fa-sitemap" style="color: #009d63; margin-right: 5px"></i>Items</a>
-            <a href="#orders" class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover" id="ordrs"
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover"
+               id="ordrs"
                onclick="loadSection('orders');anchorClick('orders')"><i
                     class="fa-solid fa-coins" style="color: #009d63;  margin-right: 5px"></i>Orders</a>
-            <a href="#newOrder"
+            <a href="#"
                class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover" id="newOrdrs"
                onclick="loadSection('newOrder');anchorClick('newOrder')"><i
                     class="fa-solid fa-cart-plus" style="color: #009d63;  margin-right: 5px"></i>NewOrder</a>
@@ -147,7 +144,8 @@
                 <div class="row my-5">
                     <h3 class="fs-4 mb-3">Recent Orders</h3>
                     <div class="col">
-                        <table id="example" class="table bg-white rounded   table-hover table-striped">
+                        <table id="example" class="table bg-white rounded table-hover table-striped dt-responsive nowrap"
+                               style="width: 100%">
                             <thead>
                             <tr>
                                 <th scope="col" width="50">#</th>
@@ -275,7 +273,7 @@
                 <!--                <h3 class="fs-4 mb-3">Customers</h3>-->
 
                 <div class="col">
-                    <table id="example2" class="table bg-white rounded   table-hover table-striped">
+                    <table id="example2" class="table bg-white rounded table-hover table-striped dt-responsive nowrap" style="width: 100%">
                         <thead>
                         <tr>
                             <th scope="col" width="50">#</th>
@@ -366,12 +364,12 @@
         <section id="items">
             <div class="txtCus">
                 <div class="input-group mb-3 myCustxt">
-                    <span class="input-group-text txtColour" >Item_Name</span>
+                    <span class="input-group-text txtColour">Item_Name</span>
                     <input type="text" class="form-control" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default">
                 </div>
                 <div class="input-group mb-3 myCustxt">
-                    <span class="input-group-text txtColour" >Batch_Number</span>
+                    <span class="input-group-text txtColour">Batch_Number</span>
                     <input type="text" class="form-control" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default" disabled>
                 </div>
@@ -411,8 +409,9 @@
 
                 <!--                <h3 class="fs-4 mb-3">Customers</h3>-->
 
-                <div class="col">
-                    <table id="example3" class="table bg-white rounded table-hover table-striped table-responsive">
+                <div class="col container">
+                    <table id="example3" class="table bg-white rounded table-hover table-striped dt-responsive nowrap"
+                           style="width: 100%">
                         <thead>
                         <tr>
                             <th scope="col" width="50">#</th>
@@ -484,8 +483,9 @@
 
                 <!--                <h3 class="fs-4 mb-3">Customers</h3>-->
 
-                <div class="col">
-                    <table id="example4" class="table bg-white rounded table-hover table-striped table-responsive">
+                <div class="col container">
+                    <table id="example4" class="table bg-white rounded table-hover table-striped dt-responsive nowrap"
+                           style="width: 100%">
                         <thead>
                         <tr>
                             <th scope="col" width="50">#</th>
@@ -538,10 +538,11 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.js">
 </script>
-<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js
-"></script>
-<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js
-"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.4.1/js/responsive.bootstrap5.min.js"></script>
+
+<script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -559,9 +560,22 @@
         el2.classList.toggle("toggled");
     };
 
+    var myObject = {};
+
+    myObject.display = "none";
+
+    window.onload = function () {
+        document.getElementById("dashboard").style.display = "block";
+        document.getElementById('customers').style.display = "none";
+        document.getElementById('items').style.display = "none";
+        document.getElementById('orders').style.display = "none";
+        document.getElementById('newOrder').style.display = "none";
+    };
+
     $(document).ready(function () {
         $('#example').DataTable({
             pageLength: 5,
+            responsive: true,
             lengthMenu: [
                 [5, 10, 25, 50, -1],
                 ['5', '10', '25', '50', 'All']
@@ -572,6 +586,7 @@
     $(document).ready(function () {
         $('#example2').DataTable({
             pageLength: 5,
+            responsive: true,
             lengthMenu: [
                 [5, 10, 25, 50, -1],
                 ['5', '10', '25', '50', 'All']
@@ -582,13 +597,7 @@
     $(document).ready(function () {
         $('#example3').DataTable({
             pageLength: 5,
-            // responsive: true,
-            scrollX: true,
-            scrollXInner: '100%',
-
-
-            // scrollHeadInner: '100%',
-
+            responsive: true,
             lengthMenu: [
                 [5, 10, 25, 50, -1],
                 ['5', '10', '25', '50', 'All']
@@ -598,20 +607,19 @@
     $(document).ready(function () {
         $('#example4').DataTable({
             pageLength: 5,
-            // responsive: true,
-            scrollX: true,
-            scrollXInner: '100%',
-            // scrollHeadInner: '100%',
+            responsive: true,
             lengthMenu: [
                 [5, 10, 25, 50, -1],
                 ['5', '10', '25', '50', 'All']
             ]
+
         });
+
     });
 
 
-
     function anchorClick(anchorId) {
+
         if (anchorId === 'dashboard') {
             document.getElementById('dash').style.setProperty("background-color", "#BFF5DC", "important");
             document.getElementById('cus').style.setProperty("background-color", "#ffffff", "important");
@@ -625,7 +633,16 @@
             document.getElementById('ordrs').style.setProperty("color", "#000000");
             document.getElementById('newOrdrs').style.setProperty("color", "#000000");
 
-        }else if (anchorId==='customers'){
+            const mq = window.matchMedia("(max-width:900px)");
+
+            if (mq.matches) {
+
+                document.getElementById("wrapper").classList.toggle("toggled");
+
+            }
+
+
+        } else if (anchorId === 'customers') {
             document.getElementById('dash').style.setProperty("background-color", "#ffffff", "important");
             document.getElementById('cus').style.setProperty("background-color", "#BFF5DC", "important");
             document.getElementById('itm').style.setProperty("background-color", "#ffffff", "important");
@@ -637,8 +654,14 @@
             document.getElementById('itm').style.setProperty("color", "#000000");
             document.getElementById('ordrs').style.setProperty("color", "#000000");
             document.getElementById('newOrdrs').style.setProperty("color", "#000000");
-        }
-        else if (anchorId==='items'){
+            const mq = window.matchMedia("(max-width:900px)");
+
+            if (mq.matches) {
+                document.getElementById("wrapper").classList.toggle("toggled");
+
+            }
+
+        } else if (anchorId === 'items') {
             document.getElementById('dash').style.setProperty("background-color", "#ffffff", "important");
             document.getElementById('cus').style.setProperty("background-color", "#ffffff", "important");
             document.getElementById('itm').style.setProperty("background-color", "#BFF5DC", "important");
@@ -650,8 +673,15 @@
             document.getElementById('itm').style.setProperty("color", "#03a293");
             document.getElementById('ordrs').style.setProperty("color", "#000000");
             document.getElementById('newOrdrs').style.setProperty("color", "#000000");
-        }
-        else if (anchorId==='orders'){
+
+            const mq = window.matchMedia("(max-width:900px)");
+
+            if (mq.matches) {
+                document.getElementById("wrapper").classList.toggle("toggled");
+
+            }
+
+        } else if (anchorId === 'orders') {
             document.getElementById('dash').style.setProperty("background-color", "#ffffff", "important");
             document.getElementById('cus').style.setProperty("background-color", "#ffffff", "important");
             document.getElementById('itm').style.setProperty("background-color", "#ffffff", "important");
@@ -663,8 +693,14 @@
             document.getElementById('itm').style.setProperty("color", "#000000");
             document.getElementById('ordrs').style.setProperty("color", "#03a293");
             document.getElementById('newOrdrs').style.setProperty("color", "#000000");
-        }
-        else if (anchorId==='newOrder'){
+            const mq = window.matchMedia("(max-width:900px)");
+
+            if (mq.matches) {
+                document.getElementById("wrapper").classList.toggle("toggled");
+
+
+            }
+        } else if (anchorId === 'newOrder') {
             document.getElementById('dash').style.setProperty("background-color", "#ffffff", "important");
             document.getElementById('cus').style.setProperty("background-color", "#ffffff", "important");
             document.getElementById('itm').style.setProperty("background-color", "#ffffff", "important");
@@ -676,55 +712,121 @@
             document.getElementById('itm').style.setProperty("color", "#000000");
             document.getElementById('ordrs').style.setProperty("color", "#000000");
             document.getElementById('newOrdrs').style.setProperty("color", "#03a293");
+
+            const mq = window.matchMedia("(max-width:900px)");
+
+            if (mq.matches) {
+                document.getElementById("wrapper").classList.toggle("toggled");
+
+                 /*var el7 = document.getElementById("wrapper");
+                 var toggleButton7 = document.getElementById("newOrdrs");
+
+                 toggleButton7.onclick = function () {
+                     el7.classList.remove("toggled");
+                 };
+*/
+            }
+
         }
     }
+
+    /*function anchorClick(anchorId) {
+        const styles = {
+            dashboard: { dash: 'BFF5DC', cus: 'ffffff', itm: 'ffffff', ordrs: 'ffffff', newOrdrs: 'ffffff', color: '03a293' },
+            customers: { dash: 'ffffff', cus: 'BFF5DC', itm: 'ffffff', ordrs: 'ffffff', newOrdrs: 'ffffff', color: '03a293' },
+            items: { dash: 'ffffff', cus: 'ffffff', itm: 'BFF5DC', ordrs: 'ffffff', newOrdrs: 'ffffff', color: '03a293' },
+            orders: { dash: 'ffffff', cus: 'ffffff', itm: 'ffffff', ordrs: 'BFF5DC', newOrdrs: 'ffffff', color: '03a293' },
+            newOrder: { dash: 'ffffff', cus: 'ffffff', itm: 'ffffff', ordrs: 'ffffff', newOrdrs: 'BFF5DC', color: '03a293' }
+        };
+
+        const mq = window.matchMedia("(max-width:900px)");
+        if (mq.matches) {
+            document.getElementById("wrapper").classList.toggle("toggled");
+        }
+
+        const anchorStyles = styles[anchorId];
+        if (anchorStyles) {
+            Object.entries(anchorStyles).forEach(([anchor, color]) => {
+                document.getElementById(anchor).style.setProperty("background-color", `#${color}`, "important");
+                document.getElementById(anchor).style.setProperty("color", color === '03a293' ? '#03a293' : '#000000');
+            });
+        }
+    }*/
+
+
+    /* function loadSection(sectionId) {
+
+         if (sectionId === 'dashboard') {
+
+             document.getElementById('dashboard').style.display = "block";
+             document.getElementById('customers').style.display = "none";
+             document.getElementById('items').style.display = "none";
+             document.getElementById('orders').style.display = "none";
+             document.getElementById('newOrder').style.display = "none";
+             document.getElementById('h2Ele').textContent = "Dashboard";
+
+
+         } else if (sectionId === 'customers') {
+             document.getElementById('dashboard').style.display = "none";
+             document.getElementById('customers').style.display = "block";
+             document.getElementById('items').style.display = "none";
+             document.getElementById('orders').style.display = "none";
+             document.getElementById('newOrder').style.display = "none";
+             document.getElementById('h2Ele').textContent = "Customers";
+
+
+         } else if (sectionId == 'items') {
+             document.getElementById('dashboard').style.display = "none";
+             document.getElementById('customers').style.display = "none";
+             document.getElementById('items').style.display = "block";
+             document.getElementById('orders').style.display = "none";
+             document.getElementById('newOrder').style.display = "none";
+             document.getElementById('h2Ele').textContent = 'Items';
+
+         } else if (sectionId == 'orders') {
+             document.getElementById('dashboard').style.display = "none";
+             document.getElementById('customers').style.display = "none";
+             document.getElementById('items').style.display = "none";
+             document.getElementById('orders').style.display = "block";
+             document.getElementById('newOrder').style.display = "none";
+             document.getElementById('h2Ele').textContent = "Orders";
+
+         } else if (sectionId == 'newOrder') {
+             document.getElementById('dashboard').style.display = "none";
+             document.getElementById('customers').style.display = "none";
+             document.getElementById('items').style.display = "none";
+             document.getElementById('orders').style.display = "none";
+             document.getElementById('newOrder').style.display = "block";
+             document.getElementById('h2Ele').textContent = "NewOrder";
+
+         }
+
+
+
+
+     }*/
 
     function loadSection(sectionId) {
-        if (sectionId === 'dashboard') {
+        const sections = ['dashboard', 'customers', 'items', 'orders', 'newOrder'];
 
-            document.getElementById('dashboard').style.display = "block";
-            document.getElementById('customers').style.display = "none";
-            document.getElementById('items').style.display = "none";
-            document.getElementById('orders').style.display = "none";
-            document.getElementById('newOrder').style.display = "none";
-            document.getElementById('h2Ele').textContent = "Dashboard";
+        sections.forEach(function (section) {
+            const display = section === sectionId ? 'block' : 'none';
+            document.getElementById(section).style.display = display;
+        });
 
-        } else if (sectionId === 'customers') {
-            document.getElementById('dashboard').style.display = "none";
-            document.getElementById('customers').style.display = "block";
-            document.getElementById('items').style.display = "none";
-            document.getElementById('orders').style.display = "none";
-            document.getElementById('newOrder').style.display = "none";
-            document.getElementById('h2Ele').textContent = "Customers";
+        const sectionTitles = {
+            dashboard: 'Dashboard',
+            customers: 'Customers',
+            items:'Items',
+            orders:'Orders',
+            newOrder:'NewOrder',
+            // Add more section titles as needed
+        };
 
-        } else if (sectionId == 'items') {
-            document.getElementById('dashboard').style.display = "none";
-            document.getElementById('customers').style.display = "none";
-            document.getElementById('items').style.display = "block";
-            document.getElementById('orders').style.display = "none";
-            document.getElementById('newOrder').style.display = "none";
-            document.getElementById('h2Ele').textContent = 'Items';
-
-        } else if (sectionId == 'orders') {
-            document.getElementById('dashboard').style.display = "none";
-            document.getElementById('customers').style.display = "none";
-            document.getElementById('items').style.display = "none";
-            document.getElementById('orders').style.display = "block";
-            document.getElementById('newOrder').style.display = "none";
-            document.getElementById('h2Ele').textContent = "Orders";
-
-        } else if (sectionId == 'newOrder') {
-            document.getElementById('dashboard').style.display = "none";
-            document.getElementById('customers').style.display = "none";
-            document.getElementById('items').style.display = "none";
-            document.getElementById('orders').style.display = "none";
-            document.getElementById('newOrder').style.display = "block";
-            document.getElementById('h2Ele').textContent = "NewOrder";
-
-        }
-
-
+        document.getElementById('h2Ele').textContent = sectionTitles[sectionId];
     }
+
+
 </script>
 </body>
 

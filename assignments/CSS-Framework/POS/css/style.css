@@ -204,7 +204,7 @@ table > tbody > tr:hover {
 
 }
 
-@media (min-width: 991px) {
+@media all and (min-width: 991px) {
     #sidebar-wrapper {
         margin-left: 0;
     }
@@ -271,9 +271,9 @@ table > tbody > tr:hover {
 
 @media all and (max-width: 425px) {
 
-    tr, th {
+    /*tr, th {
         font-size: 0.8rem !important;
-    }
+    }*/
 
     .btnCusGroup {
         width: 89%;
@@ -282,10 +282,10 @@ table > tbody > tr:hover {
 
     }
 
-    .cusTable {
+    /*.cusTable {
         padding-left: 0;
         padding-right: 0;
-    }
+    }*/
 
 
 }
