@@ -427,7 +427,7 @@ body > section:nth-child(6) {
 
 .rowProject > h1 {
     font-size: 55px;
-    line-height: 50px;
+    line-height:80px;
     text-align: center;
     color: #3FD289;
     margin-bottom: 70px;
@@ -464,10 +464,29 @@ body > section:nth-child(7) > div:nth-child(2) > div {
 
 }
 
-body > section:nth-child(7) > div:nth-child(2) > div > img {
-    width: 100px;
-    height: 100px;
+body > section:nth-child(7) > div:nth-child(2) > div > a>img {
+    width: 140px;
+    height: 120px;
+    cursor: pointer;
 }
+.myButton{
+
+    width: 110px;
+    height: 47px;
+    background-color: #3fd289;
+    color: #000000;
+    border-radius: 26px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.4rem;
+    border: none;
+
+}
+.myButton:hover{
+    background-color: #000000;
+    color: #3fd289;
+}
+
 
 body>section:nth-child(7)>div:nth-child(2)>div>p{
     font-weight: bold;
@@ -720,6 +739,12 @@ form>div:nth-child(4){
 
 .contact-info .icon i {
     font-size: 24px;
+}
+#welcomeImage,.left1,.aboutmeImage,.aboutme,.aboutmepara,.educationh1,.leftImageEdu,.rightEdu,
+.workh1,.workpara,.workammount,.projectsh1,.projectdivg1,.projectdivg2,.projectdivg3,
+.certificatesh1,.galleryh1,.gall1,.gall4,.contacth1,.form-group,.contact-info{
+    position: relative;
+    overflow: hidden;
 }
 
 @media (min-width: 1500px) {
