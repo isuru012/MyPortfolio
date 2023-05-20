@@ -146,6 +146,14 @@ table > tbody > tr:hover {
     width: 420px !important;
 
 }
+.drpbtn{
+    background-color: #31dfa3!important;
+    font-size: 1rem!important;
+    font-weight: bold!important;
+}
+.footDiv{
+    width: 25%;
+}
 
 .txtCus {
     position: relative;

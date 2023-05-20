@@ -8,16 +8,20 @@
 
     <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
     <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR0eTJOJMz4+oPBQ==" crossorigin="anonymous" />-->
 
     <link rel="stylesheet" href="css/style.css"/>
     <title>Rangi BookShop</title>
     <link rel="stylesheet" href="css/bootstrap.css">
 
-    <link rel="stylesheet" href="css/normalize.css">
+
 </head>
 
 <body>
@@ -143,9 +147,8 @@
 
                 <div class="row my-5">
                     <h3 class="fs-4 mb-3">Recent Orders</h3>
-                    <div class="col">
-                        <table id="example" class="table bg-white rounded table-hover table-striped dt-responsive nowrap"
-                               style="width: 100%">
+                    <div class="col  table-responsive-sm">
+                        <table id="example" class="table bg-white rounded table-hover table-striped " style="width: 100%">
                             <thead>
                             <tr>
                                 <th scope="col" width="50">#</th>
@@ -272,8 +275,8 @@
 
                 <!--                <h3 class="fs-4 mb-3">Customers</h3>-->
 
-                <div class="col">
-                    <table id="example2" class="table bg-white rounded table-hover table-striped dt-responsive nowrap" style="width: 100%">
+                <div class="col table-responsive-sm">
+                    <table id="example2" class="table bg-white rounded table-hover table-striped">
                         <thead>
                         <tr>
                             <th scope="col" width="50">#</th>
@@ -409,9 +412,8 @@
 
                 <!--                <h3 class="fs-4 mb-3">Customers</h3>-->
 
-                <div class="col container">
-                    <table id="example3" class="table bg-white rounded table-hover table-striped dt-responsive nowrap"
-                           style="width: 100%">
+                <div class="col container table-responsive-sm">
+                    <table id="example3" class="table bg-white rounded table-hover table-striped">
                         <thead>
                         <tr>
                             <th scope="col" width="50">#</th>
@@ -483,9 +485,8 @@
 
                 <!--                <h3 class="fs-4 mb-3">Customers</h3>-->
 
-                <div class="col container">
-                    <table id="example4" class="table bg-white rounded table-hover table-striped dt-responsive nowrap"
-                           style="width: 100%">
+                <div class="col container table-responsive-sm">
+                    <table id="example4" class="table bg-white rounded table-hover table-striped">
                         <thead>
                         <tr>
                             <th scope="col" width="50">#</th>
@@ -529,6 +530,147 @@
             </div>
         </section>
         <section id="newOrder">
+            <div class="txtCus">
+
+                <div class="input-group mb-3 myCustxt">
+                    <span class="input-group-text txtColour">Customer_Name</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 myCustxt">
+                    <span class="input-group-text txtColour">Item_Name</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 myCustxt">
+                    <div class="dropdown">
+                        <button class="btn drpbtn dropdown-toggle " type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            Batch_Number
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">1</a></li>
+                            <li><a class="dropdown-item" href="#">2</a></li>
+                            <li><a class="dropdown-item" href="#">3</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="input-group mb-3 myCustxt ">
+                    <span class="input-group-text txtColour">Quantity_On_Hand</span>
+                    <input type="number" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 myCustxt ">
+                    <span class="input-group-text txtColour">Unit_Price</span>
+                    <input type="number" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 myCustxt ">
+                    <span class="input-group-text txtColour">Discounts</span>
+                    <input type="number" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+            <div class="btnCusGroup">
+
+
+                <button type="button" class="btn btn-outline-danger btnDel"><i class="fa-solid fa-trash "
+                                                                               style="color: #d50101; margin-right: 5px"></i>Delete
+                </button>
+                <button type="button" class="btn btn-outline-warning btnUpd"><i class="fa-solid fa-pencil"
+                                                                                style="color: #ffc107; margin-right: 5px"></i>Update
+                </button>
+                <button type="button" class="btn btn-outline-success btnAdd"><i class="fa-solid fa-plus"
+                                                                                style="color: #198754;margin-right: 5px"></i>Add
+                </button>
+
+            </div>
+
+
+            <div class="row my-5 py-4 cusTable">
+
+                <!--                <h3 class="fs-4 mb-3">Customers</h3>-->
+
+                <div class="col container table-responsive-sm">
+                    <table id="example6" class="table bg-white rounded table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col" width="50">#</th>
+                            <th scope="col">Item_Name</th>
+                            <th scope="col">Batch_Number</th>
+                            <th scope="col">Customer_Name</th>
+                            <th scope="col">Quantity_On_Hand</th>
+                            <th scope="col">Unit_Price</th>
+                            <th scope="col">Discounts</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                       <!-- <tr>
+                            <th scope="row">1</th>
+                            <td>Pen</td>
+                            <td>1</td>
+                            <td>100</td>
+                            <td>50</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Pencil</td>
+                            <td>1</td>
+                            <td>150</td>
+                            <td>20</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Book 120pages</td>
+                            <td>1</td>
+                            <td>150</td>
+                            <td>200</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Gum</td>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>80</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>NewsPaper</td>
+                            <td>1</td>
+                            <td>10</td>
+                            <td>60</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Eraser</td>
+                            <td>1</td>
+                            <td>20</td>
+                            <td>40</td>
+                            <td>0</td>
+                        </tr>-->
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row justify-content-between ">
+                <div class=" col-12 col-sm-3">
+                    <h3 class="fs-4 mb-3 ms-5">Balance :</h3>
+
+                </div>
+                <div class="col-12 col-sm-3 mb-3 ms-5">
+                    <button type="button" class="btn btn-outline-success btnAdd"><i class="fa-solid fa-plus"
+                                                                                    style="color: #198754;margin-right: 5px"></i>Place_Order
+                    </button>
+                </div>
+            </div>
+
 
         </section>
     </div>
@@ -536,13 +678,12 @@
 <!-- /#page-content-wrapper -->
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.js">
-</script>
-<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
-<script src="https://cdn.datatables.net/responsive/2.4.1/js/responsive.bootstrap5.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
-<script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -575,7 +716,6 @@
     $(document).ready(function () {
         $('#example').DataTable({
             pageLength: 5,
-            responsive: true,
             lengthMenu: [
                 [5, 10, 25, 50, -1],
                 ['5', '10', '25', '50', 'All']
@@ -586,7 +726,6 @@
     $(document).ready(function () {
         $('#example2').DataTable({
             pageLength: 5,
-            responsive: true,
             lengthMenu: [
                 [5, 10, 25, 50, -1],
                 ['5', '10', '25', '50', 'All']
@@ -597,7 +736,7 @@
     $(document).ready(function () {
         $('#example3').DataTable({
             pageLength: 5,
-            responsive: true,
+
             lengthMenu: [
                 [5, 10, 25, 50, -1],
                 ['5', '10', '25', '50', 'All']
@@ -607,7 +746,17 @@
     $(document).ready(function () {
         $('#example4').DataTable({
             pageLength: 5,
-            responsive: true,
+            lengthMenu: [
+                [5, 10, 25, 50, -1],
+                ['5', '10', '25', '50', 'All']
+            ]
+
+        });
+
+    });
+    $(document).ready(function () {
+        $('#example6').DataTable({
+            pageLength: 5,
             lengthMenu: [
                 [5, 10, 25, 50, -1],
                 ['5', '10', '25', '50', 'All']
@@ -718,12 +867,12 @@
             if (mq.matches) {
                 document.getElementById("wrapper").classList.toggle("toggled");
 
-                 /*var el7 = document.getElementById("wrapper");
-                 var toggleButton7 = document.getElementById("newOrdrs");
+                /*var el7 = document.getElementById("wrapper");
+                var toggleButton7 = document.getElementById("newOrdrs");
 
-                 toggleButton7.onclick = function () {
-                     el7.classList.remove("toggled");
-                 };
+                toggleButton7.onclick = function () {
+                    el7.classList.remove("toggled");
+                };
 */
             }
 
@@ -817,9 +966,9 @@
         const sectionTitles = {
             dashboard: 'Dashboard',
             customers: 'Customers',
-            items:'Items',
-            orders:'Orders',
-            newOrder:'NewOrder',
+            items: 'Items',
+            orders: 'Orders',
+            newOrder: 'NewOrder',
             // Add more section titles as needed
         };
 
