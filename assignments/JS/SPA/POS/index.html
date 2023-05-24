@@ -657,14 +657,14 @@
 
     myObject.display = "none";
 
-    window.onload = function () {
+    /*window.onload = function () {
         document.getElementById("dashboard").style.display = "block";
         document.getElementById('customers').style.display = "none";
         document.getElementById('items').style.display = "none";
         document.getElementById('orders').style.display = "none";
         document.getElementById('newOrder').style.display = "none";
     };
-
+*/
     $(document).ready(function () {
         $('#example').DataTable({
             pageLength: 5,
@@ -924,8 +924,20 @@
         };
 
         document.getElementById('h2Ele').textContent = sectionTitles[sectionId];
-    }
 
+        localStorage.setItem('activeSection', sectionId);
+
+
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        const lastActiveSection = localStorage.getItem('activeSection');
+        if (lastActiveSection) {
+            loadSection(lastActiveSection);
+        } else {
+            // Set a default section if no active section is found
+            loadSection('dashboard');
+        }
+    });
 
 </script>
 </body>
