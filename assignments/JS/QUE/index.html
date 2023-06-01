@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Queue</title>
+    <style>
+        body{
+            background: #353232;
+        }
+        body > div:nth-child(4) {
+            display: flex;
+            width: 80vw;
+            height: 20vh;
+            position: absolute;
+            top: 35vh;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            justify-content: flex-end;
+        }
+
+        body > div:nth-child(5) {
+            display: flex;
+            width: 80vw;
+            height: 20vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            gap: 4px;
+            justify-content: center;
+        }
+
+        body > div:nth-child(6) {
+            display: flex;
+            width: 80vw;
+            height: 20vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 35vh;
+            right: 0;
+            margin: auto;
+
+        }
+
+        .bo1 {
+            background: #ffc107;
+            width: 13vw;
+            height: 15vh;
+
+        }
+
+        .line1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 22vh;
+            right: 0;
+            margin: auto;
+            width: 85%;
+            height: 2px;
+            background: black;
+        }
+
+        .line2 {
+            position: absolute;
+            top: 12vh;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            width: 85%;
+            height: 2px;
+            background: black;
+        }
+
+        h2 {
+            position: absolute;
+            top: 10vh;
+            left: 42vw;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        #box6 {
+            background: deeppink;
+        }
+
+        #box2 {
+            background: green;
+
+        }
+
+        #box3 {
+            background: blue;
+
+        }
+
+        #box4 {
+            background: yellow;
+
+        }
+
+        #box5 {
+            background: pink;
+        }
+
+        #box1 {
+            background: red;
+        }
+
+    </style>
+</head>
+<body>
+<h2>JavaScript Queue</h2>
+<div class="line1"></div>
+<div class="line2"></div>
+<div>
+
+    <div class="bo1" id="box6"></div>
+</div>
+
+<div>
+
+    <div class="bo1" id="box2"></div>
+    <div class="bo1" id="box3"></div>
+    <div class="bo1" id="box4"></div>
+    <div class="bo1" id="box5"></div>
+
+</div>
+<div>
+    <div class="bo1" id="box1" ></div>
+
+</div>
+<script>
+    let colours = ["red", "green", "blue", "yellow", "pink", "deeppink"];
+
+    setInterval(function () {
+
+        for (let i = 0; i < colours.length; i++) {
+            document.getElementById("box"+(i+1)).style.backgroundColor = colours[i];
+        }
+        let lastElement = colours.pop();
+        colours.unshift(lastElement);
+    },400);
+
+
+</script>
+</body>
+</html>
