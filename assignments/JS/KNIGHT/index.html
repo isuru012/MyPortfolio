@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KNIGHT RIDER</title>
+    <style>
+        body > div:nth-child(1) {
+            display: flex;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 80vw;
+            height: 10vh;
+
+        }
+
+        body > div:nth-child(1) > div {
+            border: black 1px solid;
+            width: 100%;
+        }
+
+        .btn1 {
+            background: #06b9d7;
+            width: 100%;
+            border: none;
+            box-shadow: #888888 -1px 4px 4px 0px;
+            font-weight: bold;
+            border-radius: 10%;
+            cursor: pointer;
+        }
+        .btn2{
+            background: #f14c4c;
+            width: 100%;
+            border: none;
+            box-shadow: #888888 -1px 4px 4px 0px;
+            font-weight: bold;
+            border-radius: 10%;
+            cursor: pointer;
+        }
+        body > div:nth-child(2){
+            display: flex;
+            position: absolute;
+            height: 5vh;
+            width: 20vw;
+            top: 20vh;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            gap: 5px;
+
+        }
+        .btn1:hover{
+            background: #0a53be;
+        }
+        .btn2:hover{
+            background: #fa0000;
+        }
+
+
+    </style>
+</head>
+<body>
+<div>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+    <div id="div5"></div>
+</div>
+<div>
+    <button class="btn1" onclick="start()">Start</button>
+    <button class="btn2" onclick="stop()">Stop</button>
+
+</div>
+
+<audio src="Knight%20Rider.mp3" loop="true" autoplay="true" id="aud"  onclick="stop()"> </audio>
+<script>
+    let colours=["#FF0000","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#f5dcdc","#FFBABA","#FF7B7B","#FF5252"];
+    var count=0;
+    var count2=9;
+    var forward = true;
+    let id;
+
+    clearInterval(id);
+
+     id = setInterval(function () {
+        if (count === 9) {
+            colours = ["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FF0000","#FF5252","#FF7B7B","#FFBABA","#f5dcdc"];
+            if (count2 === 0) {
+                count = 0;
+                forward = true;
+            }
+            count2--;
+            forward = false;
+        } else if (count === 0 && !forward) {
+            colours = ["#FF0000","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#f5dcdc","#FFBABA","#FF7B7B","#FF5252"];
+            count2 = 9;
+            forward = true;
+        }
+
+        for (let i = 0; i < 5; i++) {
+            document.getElementById("div" + (i+1)).style.backgroundColor = colours[i];
+        }
+
+        if (forward) {
+            let lastElement = colours.pop();
+            colours.unshift(lastElement);
+            count++;
+        } else {
+            let firstElement = colours.shift();
+            colours.push(firstElement);
+            count--;
+        }
+    }, 150);
+    function stop() {
+        clearInterval(id);
+        document.getElementById("aud").pause();
+    }
+    function start() {
+        document.getElementById("aud").play();
+
+        clearInterval(id);
+
+        id = setInterval(function () {
+            if (count === 9) {
+                colours = ["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FF0000","#FF5252","#FF7B7B","#FFBABA","#FFFFFF"];
+                if (count2 === 0) {
+                    count = 0;
+                    forward = true;
+                }
+                count2--;
+                forward = false;
+            } else if (count === 0 && !forward) {
+                colours = ["#FF0000","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFBABA","#FF7B7B","#FF5252"];
+                count2 = 9;
+                forward = true;
+            }
+
+            for (let i = 0; i < 5; i++) {
+                document.getElementById("div" + (i+1)).style.backgroundColor = colours[i];
+            }
+
+            if (forward) {
+                let lastElement = colours.pop();
+                colours.unshift(lastElement);
+                count++;
+            } else {
+                let firstElement = colours.shift();
+                colours.push(firstElement);
+                count--;
+            }
+        }, 150);
+    }
+    /*let colours=["#FF0000","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFBABA","#FF7B7B","#FF5252"];
+    var count=0;
+    var count2=8;
+    var id=setInterval(function () {
+        if (count===8){
+          // clearInterval(id);
+            colours=["#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FF0000","#FF5252","#FF7B7B","#FFBABA","#FFFFFF"];
+            if (count2===0){
+                count=0;
+            }
+            count2--;
+
+            for (let i = 0; i < 5; i++) {
+                document.getElementById("div"+(i+1)).style.backgroundColor = colours[i];
+            }
+
+            let firstElement = colours.shift();
+            colours.push(firstElement);
+        }
+        else {
+            if (count===0){
+                colours=["#FF0000","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFFFFF","#FFBABA","#FF7B7B","#FF5252"];
+                count2=8;
+            }
+            count++;
+            for (let i = 0; i < 5; i++) {
+                document.getElementById("div" + (i + 1)).style.backgroundColor = colours[i];
+            }
+
+            let lastElement = colours.pop();
+            colours.unshift(lastElement);
+            /!*setTimeout(function () {
+            for (let i = 5; i >0; i--) {
+                document.getElementById("div"+(i)).style.backgroundColor = colours[i];
+            }
+        },200);*!/
+        }
+
+    },200);*/
+
+
+
+
+</script>
+</body>
+</html>
