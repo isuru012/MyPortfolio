@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caculator</title>
+    <style>
+        body {
+            background: url("bg.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .calculator {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 60%;
+            width: 40%;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+            background-color: #f3fff6;
+            border-radius: 10px;
+            border: black solid 1px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 5px;
+        }
+
+        .calculator button {
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            height: 97%;
+            border-radius: 7px;
+            border: none;
+            box-shadow: grey 2px 3px 7px 0px;;
+        }
+
+        #display {
+            grid-column-start: 2;
+            grid-column-end: 5;
+            height: 94%;
+            font-weight: bold;
+            font-size: 2rem;
+            text-align: right;
+            background: #EAE2B7;
+            border-radius: 7px;
+            border: none;
+            box-shadow: grey 2px 3px 7px 0px;;
+        }
+
+        .calculator > button:nth-child(18) {
+            grid-row-start: 1;
+        }
+
+        .numbers {
+            background: #FDBF49;
+        }
+
+        .operators {
+            background: rgba(206, 114, 16, 0.7);
+        }
+
+        #cbtn {
+            background: rgba(214, 40, 39, 0.85);
+        }
+
+        #eqbtn {
+            background: rgba(0, 48, 73, 0.68);
+        }
+
+        .numbers:hover {
+            background: #ffa32c;
+            color: white;
+        }
+
+        .operators:hover {
+            background: #ff8400;
+            color: white;
+        }
+        #cbtn:hover {
+            background: rgba(214, 40, 39, 1);
+            color: white;
+        }
+
+        #eqbtn:hover {
+            background: rgba(0, 48, 73, 1);
+            color: white;
+        }
+
+
+        @media all and (max-width: 425px) {
+            .calculator {
+                width: 80%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="calculator">
+
+    <input type="text" id="display" readonly>
+    <button class="numbers" onclick="Display('7')">7</button>
+    <button class="numbers" onclick="Display('8')">8</button>
+    <button class="numbers" onclick="Display('9')">9</button>
+    <button class="operators" onclick="Display('/')">/</button>
+    <button class="numbers" onclick="Display('4')">4</button>
+    <button class="numbers" onclick="Display('5')">5</button>
+    <button class="numbers" onclick="Display('6')">6</button>
+    <button class="operators" onclick="Display('*')">*</button>
+    <button class="numbers" onclick="Display('1')">1</button>
+    <button class="numbers" onclick="Display('2')">2</button>
+    <button class="numbers" onclick="Display('3')">3</button>
+    <button class="operators" onclick="Display('-')">-</button>
+    <button class="numbers" onclick="Display('0')">0</button>
+    <button class="numbers" onclick="Display('.')">.</button>
+    <button id="eqbtn" onclick="calculate()">=</button>
+    <button class="operators" onclick="Display('+')">+</button>
+    <button id="cbtn" onclick="clearDisplay()">C</button>
+
+</div>
+<script>
+    let display = document.getElementById('display');
+
+    function Display(value) {
+        display.value += value;
+    }
+
+    function calculate() {
+        let result = eval(display.value);
+        display.value = result;
+    }
+
+    function clearDisplay() {
+        display.value = '';
+    }
+
+</script>
+</body>
+</html>
