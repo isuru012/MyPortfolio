@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no"/>
+
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR0eTJOJMz4+oPBQ==" crossorigin="anonymous" />-->
+
+    <link rel="stylesheet" href="css/style.css"/>
+    <title>Rangi BookShop</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+
+</head>
+
+<body>
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-white" id="sidebar-wrapper">
+        <div class="sidebar-heading text-center py-4 primary-text fs-6 fw-bold text-uppercase border-bottom"><i
+                class="fas fa-user-secret me-2"></i>Rangi BookShop
+        </div>
+        <div class="list-group list-group-flush my-3">
+            <!--            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i-->
+            <!--                    class="fas fa-tachometer-alt me-2"></i>Dashboard</a>-->
+            <a href="#"
+               class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover" id="dash"
+               onclick="loadSection('dashboard');anchorClick('dashboard');"><i
+                    class="fa-solid fa-chart-line" style="color: #009d63; margin-right: 5px"></i>Dashborad</a>
+            <a href="#"
+               class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover" id="cus"
+               onclick="loadSection('customers');anchorClick('customers');"><i
+                    class="fas fa-solid fa-user-group" style="color: #009d63; margin-right: 5px;"></i>Customers</a>
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover"
+               id="itm"
+               onclick="loadSection('items');anchorClick('items');"><i
+                    class="fa-solid fa-sitemap" style="color: #009d63; margin-right: 5px"></i>Items</a>
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover"
+               id="ordrs"
+               onclick="loadSection('orders');anchorClick('orders')"><i
+                    class="fa-solid fa-coins" style="color: #009d63;  margin-right: 5px"></i>Orders</a>
+            <a href="#"
+               class="list-group-item list-group-item-action bg-transparent second-text fw-bold navHover" id="newOrdrs"
+               onclick="loadSection('newOrder');anchorClick('newOrder')"><i
+                    class="fa-solid fa-cart-plus" style="color: #009d63;  margin-right: 5px"></i>NewOrder</a>
+
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold hideNav"
+               id="menu-togle"><i
+                    class="fa-solid fa-eye-slash" style="color: #9d9000;  margin-right: 5px"></i>Hide</a>
+            <!--<a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-gift me-2"></i>Products</a>
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-comment-dots me-2"></i>Chat</a>
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-map-marker-alt me-2"></i>Outlet</a>-->
+            <!--<a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold logout"><i
+                    class="fas fa-power-off me-2"></i>Logout</a>-->
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+                <h2 class="fs-2 m-0" id="h2Ele">Dashboard</h2>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
+                           role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user me-2"></i>Isuru dulakshana
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <section id="dashboard">
+            <div class="container-fluid px-4">
+                <div class="row g-3 my-2">
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2 txtProducts">720</h3>
+                                <p class="fs-5 txtProducts">Products</p>
+                            </div>
+                            <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2 txtSales">4920</h3>
+                                <p class="fs-5 txtSales">Sales</p>
+                            </div>
+                            <i
+                                    class="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3 salIcon"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2 txtCustomers">1156</h3>
+                                <p class="fs-5 txtCustomers">Customers</p>
+                            </div>
+                            <i class="fas fa-truck fs-1 primary-text border rounded-full secondary-bg p-3 cusIcon"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2 txtIncrease">%25</h3>
+                                <p class="fs-5 txtIncrease">Increase</p>
+                            </div>
+                            <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3 increIcon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-5">
+                    <h3 class="fs-4 mb-3">Recent Orders</h3>
+                    <div class="col  table-responsive-sm">
+                        <table id="example" class="table bg-white rounded table-hover table-striped "
+                               style="width: 100%">
+                            <thead>
+                            <tr>
+                                <th scope="col" width="50">#</th>
+                                <th scope="col">Product</th>
+                                <th scope="col">Customer</th>
+                                <th scope="col">Price</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Television</td>
+                                <td>Jonny</td>
+                                <td>$1200</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Laptop</td>
+                                <td>Kenny</td>
+                                <td>$750</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Cell Phone</td>
+                                <td>Jenny</td>
+                                <td>$600</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Fridge</td>
+                                <td>Killy</td>
+                                <td>$300</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Books</td>
+                                <td>Filly</td>
+                                <td>$120</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>Gold</td>
+                                <td>Bumbo</td>
+                                <td>$1800</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td>Pen</td>
+                                <td>Bilbo</td>
+                                <td>$75</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">8</th>
+                                <td>Notebook</td>
+                                <td>Frodo</td>
+                                <td>$36</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">9</th>
+                                <td>Dress</td>
+                                <td>Kimo</td>
+                                <td>$255</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">10</th>
+                                <td>Paint</td>
+                                <td>Zico</td>
+                                <td>$434</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">11</th>
+                                <td>Carpet</td>
+                                <td>Jeco</td>
+                                <td>$1236</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">12</th>
+                                <td>Food</td>
+                                <td>Haso</td>
+                                <td>$422</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section id="customers">
+            <div class="txtCus">
+                <div class="input-group mb-3 myCustxt">
+                    <span class="input-group-text txtColour" id="inputGroup-sizing-default">Name</span>
+                    <input type="text" class="form-control txtName" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 myCustxt">
+                    <span class="input-group-text txtColour" id="inputGroup-sizing-default2">Address</span>
+                    <input type="text" class="form-control txtAddress" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 myCustxt ">
+                    <span class="input-group-text txtColour" id="inputGroup-sizing-default3">Phone_Number</span>
+                    <input type="number" class="form-control txtPhoneNumber" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+            <div class="btnCusGroup">
+
+
+                <button type="button" class="btn btn-outline-danger btnDel"><i class="fa-solid fa-trash "
+                                                                               style="color: #d50101; margin-right: 5px"></i>Delete
+                </button>
+                <button type="button" class="btn btn-outline-warning btnUpd"><i class="fa-solid fa-pencil"
+                                                                                style="color: #ffc107; margin-right: 5px"></i>Update
+                </button>
+                <button type="button" class="btn btn-outline-success btnAdd" id="add1"><i
+                        class="fa-solid fa-plus"
+                        style="color: #198754;margin-right: 5px"></i>Add
+                </button>
+
+            </div>
+
+
+            <div class="row my-5 py-4 cusTable">
+
+                <!--                <h3 class="fs-4 mb-3">Customers</h3>-->
+
+                <div class="col table-responsive-sm">
+                    <table id="example2" class="table bg-white rounded table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col" width="50">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">PhoneNumber</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody">
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Jonny</td>
+                            <td>Galle</td>
+                            <td>0712785657</td>
+                        </tr>
+                        <!-- <tr>
+                             <th scope="row">2</th>
+                             <td>Kenny</td>
+                             <td>Colombo</td>
+                             <td>0775247898</td>
+                         </tr>
+                         <tr>
+                             <th scope="row">3</th>
+                             <td>Jenny</td>
+                             <td>Kalutara</td>
+                             <td>0702456789</td>
+                         </tr>
+                         <tr>
+                             <th scope="row">4</th>
+                             <td>Isuru</td>
+                             <td>Gampaha</td>
+                             <td>0745896748</td>
+                         </tr>
+                         <tr>
+                             <th scope="row">5</th>
+                             <td>Nuwanvi</td>
+                             <td>Galle</td>
+                             <td>0768459787</td>
+                         </tr>
+                         <tr>
+                             <th scope="row">6</th>
+                             <td>Thinusha</td>
+                             <td>Wamduramba</td>
+                             <td>0775654891</td>
+                         </tr>
+                         <tr>
+                             <th scope="row">7</th>
+                             <td>Chathuska</td>
+                             <td>Kurunagala</td>
+                             <td>0771265482</td>
+                         </tr>
+                         <tr>
+                             <th scope="row">8</th>
+                             <td>Ishan</td>
+                             <td>Ihalagoda</td>
+                             <td>0718956458</td>
+                         </tr>
+                         <tr>
+                             <th scope="row">9</th>
+                             <td>Sarindu</td>
+                             <td>Hiyarea</td>
+                             <td>0752486965</td>
+                         </tr>
+                         <tr>
+                             <th scope="row">10</th>
+                             <td>Rusiru</td>
+                             <td>Ahangama</td>
+                             <td>0723546968</td>
+                         </tr>
+                         <tr>
+                             <th scope="row">11</th>
+                             <td>Suhan</td>
+                             <td>Unawatuna</td>
+                             <td>07156489793</td>
+                         </tr>
+                         <tr>
+                             <th scope="row">12</th>
+                             <td>Dushan</td>
+                             <td>Baddegama</td>
+                             <td>07124564894</td>
+                         </tr>-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+        <section id="items">
+            <div class="txtCus">
+                <div class="input-group mb-3 myCustxt">
+                    <span class="input-group-text txtColour">Item_Name</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 myCustxt">
+                    <span class="input-group-text txtColour">Batch_Number</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default" disabled>
+                </div>
+                <div class="input-group mb-3 myCustxt ">
+                    <span class="input-group-text txtColour">Quantity_On_Hand</span>
+                    <input type="number" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 myCustxt ">
+                    <span class="input-group-text txtColour">Unit_Price</span>
+                    <input type="number" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 myCustxt ">
+                    <span class="input-group-text txtColour">Discounts</span>
+                    <input type="number" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+            <div class="btnCusGroup">
+
+
+                <button type="button" class="btn btn-outline-danger btnDel"><i class="fa-solid fa-trash "
+                                                                               style="color: #d50101; margin-right: 5px"></i>Delete
+                </button>
+                <button type="button" class="btn btn-outline-warning btnUpd"><i class="fa-solid fa-pencil"
+                                                                                style="color: #ffc107; margin-right: 5px"></i>Update
+                </button>
+                <button type="button" class="btn btn-outline-success btnAdd"><i class="fa-solid fa-plus"
+                                                                                style="color: #198754;margin-right: 5px"></i>Add
+                </button>
+
+            </div>
+
+
+            <div class="row my-5 py-4 cusTable">
+
+                <!--                <h3 class="fs-4 mb-3">Customers</h3>-->
+
+                <div class="col container table-responsive-sm">
+                    <table id="example3" class="table bg-white rounded table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col" width="50">#</th>
+                            <th scope="col">Item_Name</th>
+                            <th scope="col">Batch_Number</th>
+                            <th scope="col">Quantity_On_Hand</th>
+                            <th scope="col">Unit_Price</th>
+                            <th scope="col">Discounts</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Pen</td>
+                            <td>1</td>
+                            <td>100</td>
+                            <td>50</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Pencil</td>
+                            <td>1</td>
+                            <td>150</td>
+                            <td>20</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Book 120pages</td>
+                            <td>1</td>
+                            <td>150</td>
+                            <td>200</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Gum</td>
+                            <td>1</td>
+                            <td>50</td>
+                            <td>80</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>NewsPaper</td>
+                            <td>1</td>
+                            <td>10</td>
+                            <td>60</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Eraser</td>
+                            <td>1</td>
+                            <td>20</td>
+                            <td>40</td>
+                            <td>0</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+        <section id="orders">
+            <div class="row my-5 py-4 cusTable">
+
+                <!--                <h3 class="fs-4 mb-3">Customers</h3>-->
+
+                <div class="col container table-responsive-sm">
+                    <table id="example4" class="table bg-white rounded table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col" width="50">#</th>
+                            <th scope="col">Order_ID</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Quantity_Purchased</th>
+                            <th scope="col">Selling_Unit_Price</th>
+                            <th scope="col">Total_Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>1</td>
+                            <td>2023.5.17</td>
+                            <td>2</td>
+                            <td>100</td>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>2</td>
+                            <td>2023.4.17</td>
+                            <td>4</td>
+                            <td>80</td>
+                            <td>320</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>3</td>
+                            <td>2023.5.13</td>
+                            <td>6</td>
+                            <td>10</td>
+                            <td>60</td>
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section id="newOrder">
+            <div class="txtCus">
+
+                <div class="input-group mb-3 myCustxt">
+                    <span class="input-group-text txtColour">Customer_Name</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 myCustxt">
+                    <span class="input-group-text txtColour">Item_Name</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 myCustxt">
+                    <div class="dropdown">
+                        <button class="btn drpbtn dropdown-toggle " type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            Batch_Number
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">1</a></li>
+                            <li><a class="dropdown-item" href="#">2</a></li>
+                            <li><a class="dropdown-item" href="#">3</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="input-group mb-3 myCustxt ">
+                    <span class="input-group-text txtColour">Quantity_On_Hand</span>
+                    <input type="number" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 myCustxt ">
+                    <span class="input-group-text txtColour">Unit_Price</span>
+                    <input type="number" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 myCustxt ">
+                    <span class="input-group-text txtColour">Discounts</span>
+                    <input type="number" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+            <div class="btnCusGroup">
+
+
+                <button type="button" class="btn btn-outline-danger btnDel"><i class="fa-solid fa-trash "
+                                                                               style="color: #d50101; margin-right: 5px"></i>Delete
+                </button>
+                <button type="button" class="btn btn-outline-warning btnUpd"><i class="fa-solid fa-pencil"
+                                                                                style="color: #ffc107; margin-right: 5px"></i>Update
+                </button>
+                <button type="button" class="btn btn-outline-success btnAdd"><i class="fa-solid fa-plus"
+                                                                                style="color: #198754;margin-right: 5px"></i>Add
+                </button>
+
+            </div>
+
+
+            <div class="row my-5 py-4 cusTable">
+
+                <!--                <h3 class="fs-4 mb-3">Customers</h3>-->
+
+                <div class="col container table-responsive-sm">
+                    <table id="example6" class="table bg-white rounded table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col" width="50">#</th>
+                            <th scope="col">Item_Name</th>
+                            <th scope="col">Batch_Number</th>
+                            <th scope="col">Customer_Name</th>
+                            <th scope="col">Quantity_On_Hand</th>
+                            <th scope="col">Unit_Price</th>
+                            <th scope="col">Discounts</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row justify-content-between ">
+                <div class=" col-12 col-sm-3">
+                    <h3 class="fs-4 mb-3 ms-5">Balance :</h3>
+
+                </div>
+                <div class="col-12 col-sm-3 mb-3 ms-5">
+                    <button type="button" class="btn btn-outline-success btnAdd"><i class="fa-solid fa-plus"
+                                                                                    style="color: #198754;margin-right: 5px"></i>Place_Order
+                    </button>
+                </div>
+            </div>
+
+
+        </section>
+    </div>
+</div>
+<!-- /#page-content-wrapper -->
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    var rowNumber = 2;
+    $('#add1').click(function () {
+
+        var name = /*document.getElementsByClassName('txtName')[0].value*/ $('.txtName').val();
+        var address = /*document.getElementsByClassName('txtAddress')[0].value*/$('.txtAddress').val();
+        var phoneNumber =/* document.getElementsByClassName('txtPhoneNumber')[0].value*/$('.txtPhoneNumber').val();
+
+        var createTr = /*document.createElement('tr')*/ $('<tr></tr>');
+        var createTh = /*document.createElement('th')*/ $('<th></th>').attr('scope', 'row').text(rowNumber);
+        var createTd1 =/* document.createElement('td')*/$('<td></td>').text(name);
+        var createTd2 =/* document.createElement('td')*/$('<td></td>').text(address);
+        var createTd3 = /*document.createElement('td')*/$('<td></td>').text(phoneNumber);
+
+
+        // createTh.setAttribute('scope', 'row');
+/*
+
+        createTh.textContent = rowNumber;
+        createTd1.textContent = name;
+        createTd2.textContent = address;
+        createTd3.textContent = phoneNumber;
+*/
+
+        let tbody = /*document.getElementById("tbody")*/$('#tbody');
+
+        createTr.append(createTh, createTd1, createTd2, createTd3);
+        tbody.append(createTr);
+        rowNumber++;
+    });
+
+    function addCustomer() {
+
+
+    }
+
+    function addItems() {
+
+    }
+
+    var el = document.getElementById("wrapper");
+    var toggleButton = document.getElementById("menu-toggle");
+
+    toggleButton.onclick = function () {
+        el.classList.toggle("toggled");
+    };
+
+    var el2 = document.getElementById("wrapper");
+    var toggleButton2 = document.getElementById("menu-togle");
+
+    toggleButton2.onclick = function () {
+        el2.classList.toggle("toggled");
+    };
+
+    var myObject = {};
+
+    myObject.display = "none";
+
+    /*window.onload = function () {
+        document.getElementById("dashboard").style.display = "block";
+        document.getElementById('customers').style.display = "none";
+        document.getElementById('items').style.display = "none";
+        document.getElementById('orders').style.display = "none";
+        document.getElementById('newOrder').style.display = "none";
+    };
+*/
+    $(document).ready(function () {
+        $('#example').DataTable({
+            pageLength: 5,
+            lengthMenu: [
+                [5, 10, 25, 50, -1],
+                ['5', '10', '25', '50', 'All']
+            ]
+        });
+
+    });
+    $(document).ready(function () {
+        $('#example2').DataTable({
+            pageLength: 5,
+            lengthMenu: [
+                [5, 10, 25, 50, -1],
+                ['5', '10', '25', '50', 'All']
+            ]
+        });
+
+    });
+    $(document).ready(function () {
+        $('#example3').DataTable({
+            pageLength: 5,
+
+            lengthMenu: [
+                [5, 10, 25, 50, -1],
+                ['5', '10', '25', '50', 'All']
+            ]
+        });
+    });
+    $(document).ready(function () {
+        $('#example4').DataTable({
+            pageLength: 5,
+            lengthMenu: [
+                [5, 10, 25, 50, -1],
+                ['5', '10', '25', '50', 'All']
+            ]
+
+        });
+
+    });
+    $(document).ready(function () {
+        $('#example6').DataTable({
+            pageLength: 5,
+            lengthMenu: [
+                [5, 10, 25, 50, -1],
+                ['5', '10', '25', '50', 'All']
+            ]
+
+        });
+
+    });
+
+
+    function anchorClick(anchorId) {
+
+        if (anchorId === 'dashboard') {
+            document.getElementById('dash').style.setProperty("background-color", "#BFF5DC", "important");
+            document.getElementById('cus').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('itm').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('ordrs').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('newOrdrs').style.setProperty("background-color", "#ffffff", "important");
+
+            document.getElementById('dash').style.setProperty("color", "#03a293");
+            document.getElementById('cus').style.setProperty("color", "#000000");
+            document.getElementById('itm').style.setProperty("color", "#000000");
+            document.getElementById('ordrs').style.setProperty("color", "#000000");
+            document.getElementById('newOrdrs').style.setProperty("color", "#000000");
+
+            const mq = window.matchMedia("(max-width:900px)");
+
+            if (mq.matches) {
+
+                document.getElementById("wrapper").classList.toggle("toggled");
+
+            }
+
+
+        } else if (anchorId === 'customers') {
+            document.getElementById('dash').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('cus').style.setProperty("background-color", "#BFF5DC", "important");
+            document.getElementById('itm').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('ordrs').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('newOrdrs').style.setProperty("background-color", "#ffffff", "important");
+
+            document.getElementById('dash').style.setProperty("color", "#000000");
+            document.getElementById('cus').style.setProperty("color", "#03a293");
+            document.getElementById('itm').style.setProperty("color", "#000000");
+            document.getElementById('ordrs').style.setProperty("color", "#000000");
+            document.getElementById('newOrdrs').style.setProperty("color", "#000000");
+            const mq = window.matchMedia("(max-width:900px)");
+
+            if (mq.matches) {
+                document.getElementById("wrapper").classList.toggle("toggled");
+
+            }
+
+        } else if (anchorId === 'items') {
+            document.getElementById('dash').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('cus').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('itm').style.setProperty("background-color", "#BFF5DC", "important");
+            document.getElementById('ordrs').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('newOrdrs').style.setProperty("background-color", "#ffffff", "important");
+
+            document.getElementById('dash').style.setProperty("color", "#000000");
+            document.getElementById('cus').style.setProperty("color", "#000000");
+            document.getElementById('itm').style.setProperty("color", "#03a293");
+            document.getElementById('ordrs').style.setProperty("color", "#000000");
+            document.getElementById('newOrdrs').style.setProperty("color", "#000000");
+
+            const mq = window.matchMedia("(max-width:900px)");
+
+            if (mq.matches) {
+                document.getElementById("wrapper").classList.toggle("toggled");
+
+            }
+
+        } else if (anchorId === 'orders') {
+            document.getElementById('dash').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('cus').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('itm').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('ordrs').style.setProperty("background-color", "#BFF5DC", "important");
+            document.getElementById('newOrdrs').style.setProperty("background-color", "#ffffff", "important");
+
+            document.getElementById('dash').style.setProperty("color", "#000000");
+            document.getElementById('cus').style.setProperty("color", "#000000");
+            document.getElementById('itm').style.setProperty("color", "#000000");
+            document.getElementById('ordrs').style.setProperty("color", "#03a293");
+            document.getElementById('newOrdrs').style.setProperty("color", "#000000");
+            const mq = window.matchMedia("(max-width:900px)");
+
+            if (mq.matches) {
+                document.getElementById("wrapper").classList.toggle("toggled");
+
+
+            }
+        } else if (anchorId === 'newOrder') {
+            document.getElementById('dash').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('cus').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('itm').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('ordrs').style.setProperty("background-color", "#ffffff", "important");
+            document.getElementById('newOrdrs').style.setProperty("background-color", "#BFF5DC", "important");
+
+            document.getElementById('dash').style.setProperty("color", "#000000");
+            document.getElementById('cus').style.setProperty("color", "#000000");
+            document.getElementById('itm').style.setProperty("color", "#000000");
+            document.getElementById('ordrs').style.setProperty("color", "#000000");
+            document.getElementById('newOrdrs').style.setProperty("color", "#03a293");
+
+            const mq = window.matchMedia("(max-width:900px)");
+
+            if (mq.matches) {
+                document.getElementById("wrapper").classList.toggle("toggled");
+
+                /*var el7 = document.getElementById("wrapper");
+                var toggleButton7 = document.getElementById("newOrdrs");
+
+                toggleButton7.onclick = function () {
+                    el7.classList.remove("toggled");
+                };
+*/
+            }
+
+        }
+    }
+
+    /*function anchorClick(anchorId) {
+        const styles = {
+            dashboard: { dash: 'BFF5DC', cus: 'ffffff', itm: 'ffffff', ordrs: 'ffffff', newOrdrs: 'ffffff', color: '03a293' },
+            customers: { dash: 'ffffff', cus: 'BFF5DC', itm: 'ffffff', ordrs: 'ffffff', newOrdrs: 'ffffff', color: '03a293' },
+            items: { dash: 'ffffff', cus: 'ffffff', itm: 'BFF5DC', ordrs: 'ffffff', newOrdrs: 'ffffff', color: '03a293' },
+            orders: { dash: 'ffffff', cus: 'ffffff', itm: 'ffffff', ordrs: 'BFF5DC', newOrdrs: 'ffffff', color: '03a293' },
+            newOrder: { dash: 'ffffff', cus: 'ffffff', itm: 'ffffff', ordrs: 'ffffff', newOrdrs: 'BFF5DC', color: '03a293' }
+        };
+
+        const mq = window.matchMedia("(max-width:900px)");
+        if (mq.matches) {
+            document.getElementById("wrapper").classList.toggle("toggled");
+        }
+
+        const anchorStyles = styles[anchorId];
+        if (anchorStyles) {
+            Object.entries(anchorStyles).forEach(([anchor, color]) => {
+                document.getElementById(anchor).style.setProperty("background-color", `#${color}`, "important");
+                document.getElementById(anchor).style.setProperty("color", color === '03a293' ? '#03a293' : '#000000');
+            });
+        }
+    }*/
+
+
+    /* function loadSection(sectionId) {
+
+         if (sectionId === 'dashboard') {
+
+             document.getElementById('dashboard').style.display = "block";
+             document.getElementById('customers').style.display = "none";
+             document.getElementById('items').style.display = "none";
+             document.getElementById('orders').style.display = "none";
+             document.getElementById('newOrder').style.display = "none";
+             document.getElementById('h2Ele').textContent = "Dashboard";
+
+
+         } else if (sectionId === 'customers') {
+             document.getElementById('dashboard').style.display = "none";
+             document.getElementById('customers').style.display = "block";
+             document.getElementById('items').style.display = "none";
+             document.getElementById('orders').style.display = "none";
+             document.getElementById('newOrder').style.display = "none";
+             document.getElementById('h2Ele').textContent = "Customers";
+
+
+         } else if (sectionId == 'items') {
+             document.getElementById('dashboard').style.display = "none";
+             document.getElementById('customers').style.display = "none";
+             document.getElementById('items').style.display = "block";
+             document.getElementById('orders').style.display = "none";
+             document.getElementById('newOrder').style.display = "none";
+             document.getElementById('h2Ele').textContent = 'Items';
+
+         } else if (sectionId == 'orders') {
+             document.getElementById('dashboard').style.display = "none";
+             document.getElementById('customers').style.display = "none";
+             document.getElementById('items').style.display = "none";
+             document.getElementById('orders').style.display = "block";
+             document.getElementById('newOrder').style.display = "none";
+             document.getElementById('h2Ele').textContent = "Orders";
+
+         } else if (sectionId == 'newOrder') {
+             document.getElementById('dashboard').style.display = "none";
+             document.getElementById('customers').style.display = "none";
+             document.getElementById('items').style.display = "none";
+             document.getElementById('orders').style.display = "none";
+             document.getElementById('newOrder').style.display = "block";
+             document.getElementById('h2Ele').textContent = "NewOrder";
+
+         }
+
+
+
+
+     }*/
+loadSection('customers');
+    function loadSection(sectionId) {
+        const sections = ['dashboard', 'customers', 'items', 'orders', 'newOrder'];
+
+        sections.forEach(function (section) {
+            const display = section === sectionId ? 'block' : 'none';
+            document.getElementById(section).style.display = display;
+        });
+
+        const sectionTitles = {
+            dashboard: 'Dashboard',
+            customers: 'Customers',
+            items: 'Items',
+            orders: 'Orders',
+            newOrder: 'NewOrder',
+        };
+
+        document.getElementById('h2Ele').textContent = sectionTitles[sectionId];
+
+        localStorage.setItem('activeSection', sectionId);
+
+
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const lastActiveSection = localStorage.getItem('activeSection');
+        if (lastActiveSection) {
+            loadSection(lastActiveSection);
+        } else {
+            // Set a default section if no active section is found
+            loadSection('dashboard');
+        }
+    });
+
+</script>
+</body>
+
+</html>
