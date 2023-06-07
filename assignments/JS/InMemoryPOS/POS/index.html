@@ -287,12 +287,12 @@
                         </tr>
                         </thead>
                         <tbody id="tbody">
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Jonny</td>
-                            <td>Galle</td>
-                            <td>0712785657</td>
-                        </tr>
+<!--                        <tr>-->
+<!--                            <th scope="row">1</th>-->
+<!--                            <td>Jonny</td>-->
+<!--                            <td>Galle</td>-->
+<!--                            <td>0712785657</td>-->
+<!--                        </tr>-->
                         <!-- <tr>
                              <th scope="row">2</th>
                              <td>Kenny</td>
@@ -639,36 +639,40 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    var rowNumber = 2;
-    $('#add1').click(function () {
 
-        var name = /*document.getElementsByClassName('txtName')[0].value*/ $('.txtName').val();
-        var address = /*document.getElementsByClassName('txtAddress')[0].value*/$('.txtAddress').val();
-        var phoneNumber =/* document.getElementsByClassName('txtPhoneNumber')[0].value*/$('.txtPhoneNumber').val();
+    var rowNumber = 1;
+    var arr = [];
+    var t ;
 
-        var createTr = /*document.createElement('tr')*/ $('<tr></tr>');
-        var createTh = /*document.createElement('th')*/ $('<th></th>').attr('scope', 'row').text(rowNumber);
-        var createTd1 =/* document.createElement('td')*/$('<td></td>').text(name);
-        var createTd2 =/* document.createElement('td')*/$('<td></td>').text(address);
-        var createTd3 = /*document.createElement('td')*/$('<td></td>').text(phoneNumber);
+    $('#add1').click(function() {
+        var cusName=$('.txtName').val();
+        var cusAddress=$('.txtAddress').val();
+        var cusPhonenumber=$('.txtPhoneNumber').val();
+        let customerObject={
+            name:cusName,
+            address:cusAddress,
+            phone:cusPhonenumber
+        }
+        arr.push(customerObject);
+
+      /*  var createTr = $('<tr></tr>');
+        var createTh = $('<th></th>').attr('scope', 'row').text(rowNumber);*/
+        var createTd1 = $('<td></td>').text(customerObject['name']);
+        var createTd2 = $('<td></td>').text(customerObject['address']);
+        var createTd3 = $('<td></td>').text(customerObject['phone']);
 
 
-        // createTh.setAttribute('scope', 'row');
-/*
+        let tbody = $('#tbody');
 
-        createTh.textContent = rowNumber;
-        createTd1.textContent = name;
-        createTd2.textContent = address;
-        createTd3.textContent = phoneNumber;
-*/
+        t=$('#example2').DataTable()
+        t.row.add([rowNumber,customerObject['name'],customerObject['address'],customerObject['phone']]).draw(false);
 
-        let tbody = /*document.getElementById("tbody")*/$('#tbody');
 
-        createTr.append(createTh, createTd1, createTd2, createTd3);
+       /* createTr.append(createTh, createTd1, createTd2, createTd3);
         tbody.append(createTr);
+        console.log(arr);*/
         rowNumber++;
     });
-
     function addCustomer() {
 
 
@@ -720,8 +724,10 @@
             lengthMenu: [
                 [5, 10, 25, 50, -1],
                 ['5', '10', '25', '50', 'All']
-            ]
+            ],
+
         });
+
 
     });
     $(document).ready(function () {
@@ -945,7 +951,7 @@
 
 
      }*/
-loadSection('customers');
+
     function loadSection(sectionId) {
         const sections = ['dashboard', 'customers', 'items', 'orders', 'newOrder'];
 
