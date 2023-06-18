@@ -638,6 +638,8 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../controller/DashboardController.js"></script>
+
 <script>
 
     var rowNumber = 1;
@@ -763,7 +765,7 @@
 
     });
 
-
+/*
     function anchorClick(anchorId) {
 
         if (anchorId === 'dashboard') {
@@ -864,93 +866,11 @@
             if (mq.matches) {
                 document.getElementById("wrapper").classList.toggle("toggled");
 
-                /*var el7 = document.getElementById("wrapper");
-                var toggleButton7 = document.getElementById("newOrdrs");
-
-                toggleButton7.onclick = function () {
-                    el7.classList.remove("toggled");
-                };
-*/
             }
 
         }
     }
 
-    /*function anchorClick(anchorId) {
-        const styles = {
-            dashboard: { dash: 'BFF5DC', cus: 'ffffff', itm: 'ffffff', ordrs: 'ffffff', newOrdrs: 'ffffff', color: '03a293' },
-            customers: { dash: 'ffffff', cus: 'BFF5DC', itm: 'ffffff', ordrs: 'ffffff', newOrdrs: 'ffffff', color: '03a293' },
-            items: { dash: 'ffffff', cus: 'ffffff', itm: 'BFF5DC', ordrs: 'ffffff', newOrdrs: 'ffffff', color: '03a293' },
-            orders: { dash: 'ffffff', cus: 'ffffff', itm: 'ffffff', ordrs: 'BFF5DC', newOrdrs: 'ffffff', color: '03a293' },
-            newOrder: { dash: 'ffffff', cus: 'ffffff', itm: 'ffffff', ordrs: 'ffffff', newOrdrs: 'BFF5DC', color: '03a293' }
-        };
-
-        const mq = window.matchMedia("(max-width:900px)");
-        if (mq.matches) {
-            document.getElementById("wrapper").classList.toggle("toggled");
-        }
-
-        const anchorStyles = styles[anchorId];
-        if (anchorStyles) {
-            Object.entries(anchorStyles).forEach(([anchor, color]) => {
-                document.getElementById(anchor).style.setProperty("background-color", `#${color}`, "important");
-                document.getElementById(anchor).style.setProperty("color", color === '03a293' ? '#03a293' : '#000000');
-            });
-        }
-    }*/
-
-
-    /* function loadSection(sectionId) {
-
-         if (sectionId === 'dashboard') {
-
-             document.getElementById('dashboard').style.display = "block";
-             document.getElementById('customers').style.display = "none";
-             document.getElementById('items').style.display = "none";
-             document.getElementById('orders').style.display = "none";
-             document.getElementById('newOrder').style.display = "none";
-             document.getElementById('h2Ele').textContent = "Dashboard";
-
-
-         } else if (sectionId === 'customers') {
-             document.getElementById('dashboard').style.display = "none";
-             document.getElementById('customers').style.display = "block";
-             document.getElementById('items').style.display = "none";
-             document.getElementById('orders').style.display = "none";
-             document.getElementById('newOrder').style.display = "none";
-             document.getElementById('h2Ele').textContent = "Customers";
-
-
-         } else if (sectionId == 'items') {
-             document.getElementById('dashboard').style.display = "none";
-             document.getElementById('customers').style.display = "none";
-             document.getElementById('items').style.display = "block";
-             document.getElementById('orders').style.display = "none";
-             document.getElementById('newOrder').style.display = "none";
-             document.getElementById('h2Ele').textContent = 'Items';
-
-         } else if (sectionId == 'orders') {
-             document.getElementById('dashboard').style.display = "none";
-             document.getElementById('customers').style.display = "none";
-             document.getElementById('items').style.display = "none";
-             document.getElementById('orders').style.display = "block";
-             document.getElementById('newOrder').style.display = "none";
-             document.getElementById('h2Ele').textContent = "Orders";
-
-         } else if (sectionId == 'newOrder') {
-             document.getElementById('dashboard').style.display = "none";
-             document.getElementById('customers').style.display = "none";
-             document.getElementById('items').style.display = "none";
-             document.getElementById('orders').style.display = "none";
-             document.getElementById('newOrder').style.display = "block";
-             document.getElementById('h2Ele').textContent = "NewOrder";
-
-         }
-
-
-
-
-     }*/
 
     function loadSection(sectionId) {
         const sections = ['dashboard', 'customers', 'items', 'orders', 'newOrder'];
@@ -983,7 +903,7 @@
             // Set a default section if no active section is found
             loadSection('dashboard');
         }
-    });
+    });*/
 
 </script>
 </body>
