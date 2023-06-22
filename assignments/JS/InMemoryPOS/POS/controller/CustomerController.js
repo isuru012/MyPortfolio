@@ -1,4 +1,4 @@
-var rowNumber = 1;
+var rowNumber2 = 1;
 var arr = [];
 var t ;
 
@@ -6,6 +6,8 @@ $('#add1').click(function() {
     var cusName=$('.txtName').val();
     var cusAddress=$('.txtAddress').val();
     var cusPhonenumber=$('.txtPhoneNumber').val();
+
+
     let customerObject={
         name:cusName,
         address:cusAddress,
@@ -23,13 +25,13 @@ $('#add1').click(function() {
     let tbody = $('#tbody');*/
 
     t=$('#example2').DataTable();
-    t.row.add([rowNumber,customerObject['name'],customerObject['address'],customerObject['phone']]).draw(false);
+    t.row.add([rowNumber2,customerObject['name'],customerObject['address'],customerObject['phone']]).draw(false);
 
 
     /* createTr.append(createTh, createTd1, createTd2, createTd3);
      tbody.append(createTr);
      console.log(arr);*/
-    rowNumber++;
+    rowNumber2++;
 });
 
 $(document).ready(function () {

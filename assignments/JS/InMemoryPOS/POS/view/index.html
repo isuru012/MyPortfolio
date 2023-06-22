@@ -374,23 +374,23 @@
                            aria-describedby="inputGroup-sizing-default">
                 </div>
                 <div class="input-group mb-3 myCustxt">
-                    <span class="input-group-text txtColour txtBatch">Batch_Number</span>
-                    <input type="number" class="form-control" aria-label="Sizing example input"
+                    <span class="input-group-text txtColour">Batch_Number</span>
+                    <input type="number" class="form-control txtBatch" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default">
                 </div>
-                <div class="input-group mb-3 myCustxt ">
-                    <span class="input-group-text txtColour txtQuantity">Quantity_On_Hand</span>
-                    <input type="number" class="form-control" aria-label="Sizing example input"
+                <div class="input-group mb-3 myCustxt">
+                    <span class="input-group-text txtColour">Quantity_On_Hand</span>
+                    <input type="number" class="form-control txtQuantity" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default">
                 </div>
-                <div class="input-group mb-3 myCustxt ">
-                    <span class="input-group-text txtColour txtUnit">Unit_Price</span>
-                    <input type="number" class="form-control" aria-label="Sizing example input"
+                <div class="input-group mb-3 myCustxt">
+                    <span class="input-group-text txtColour">Unit_Price</span>
+                    <input type="number" class="form-control txtUnit" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default">
                 </div>
-                <div class="input-group mb-3 myCustxt ">
-                    <span class="input-group-text txtColour txtDiscount">Discounts</span>
-                    <input type="number" class="form-control" aria-label="Sizing example input"
+                <div class="input-group mb-3 myCustxt">
+                    <span class="input-group-text txtColour">Discounts</span>
+                    <input type="number" class="form-control txtDiscount" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default">
                 </div>
             </div>
@@ -427,55 +427,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                      <!--  <tr>
-                            <th scope="row">1</th>
-                            <td>Pen</td>
-                            <td>1</td>
-                            <td>100</td>
-                            <td>50</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Pencil</td>
-                            <td>1</td>
-                            <td>150</td>
-                            <td>20</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Book 120pages</td>
-                            <td>1</td>
-                            <td>150</td>
-                            <td>200</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Gum</td>
-                            <td>1</td>
-                            <td>50</td>
-                            <td>80</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>NewsPaper</td>
-                            <td>1</td>
-                            <td>10</td>
-                            <td>60</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">6</th>
-                            <td>Eraser</td>
-                            <td>1</td>
-                            <td>20</td>
-                            <td>40</td>
-                            <td>0</td>
-                        </tr>
--->
+
                         </tbody>
                     </table>
                 </div>
@@ -646,158 +598,6 @@
 <script src="../controller/OrderController.js"></script>
 
 <script>
-
-    /*window.onload = function () {
-        document.getElementById("dashboard").style.display = "block";
-        document.getElementById('customers').style.display = "none";
-        document.getElementById('items').style.display = "none";
-        document.getElementById('orders').style.display = "none";
-        document.getElementById('newOrder').style.display = "none";
-    };
-*/
-
-
-
-
-/*
-    function anchorClick(anchorId) {
-
-        if (anchorId === 'dashboard') {
-            document.getElementById('dash').style.setProperty("background-color", "#BFF5DC", "important");
-            document.getElementById('cus').style.setProperty("background-color", "#ffffff", "important");
-            document.getElementById('itm').style.setProperty("background-color", "#ffffff", "important");
-            document.getElementById('ordrs').style.setProperty("background-color", "#ffffff", "important");
-            document.getElementById('newOrdrs').style.setProperty("background-color", "#ffffff", "important");
-
-            document.getElementById('dash').style.setProperty("color", "#03a293");
-            document.getElementById('cus').style.setProperty("color", "#000000");
-            document.getElementById('itm').style.setProperty("color", "#000000");
-            document.getElementById('ordrs').style.setProperty("color", "#000000");
-            document.getElementById('newOrdrs').style.setProperty("color", "#000000");
-
-            const mq = window.matchMedia("(max-width:900px)");
-
-            if (mq.matches) {
-
-                document.getElementById("wrapper").classList.toggle("toggled");
-
-            }
-
-
-        } else if (anchorId === 'customers') {
-            document.getElementById('dash').style.setProperty("background-color", "#ffffff", "important");
-            document.getElementById('cus').style.setProperty("background-color", "#BFF5DC", "important");
-            document.getElementById('itm').style.setProperty("background-color", "#ffffff", "important");
-            document.getElementById('ordrs').style.setProperty("background-color", "#ffffff", "important");
-            document.getElementById('newOrdrs').style.setProperty("background-color", "#ffffff", "important");
-
-            document.getElementById('dash').style.setProperty("color", "#000000");
-            document.getElementById('cus').style.setProperty("color", "#03a293");
-            document.getElementById('itm').style.setProperty("color", "#000000");
-            document.getElementById('ordrs').style.setProperty("color", "#000000");
-            document.getElementById('newOrdrs').style.setProperty("color", "#000000");
-            const mq = window.matchMedia("(max-width:900px)");
-
-            if (mq.matches) {
-                document.getElementById("wrapper").classList.toggle("toggled");
-
-            }
-
-        } else if (anchorId === 'items') {
-            document.getElementById('dash').style.setProperty("background-color", "#ffffff", "important");
-            document.getElementById('cus').style.setProperty("background-color", "#ffffff", "important");
-            document.getElementById('itm').style.setProperty("background-color", "#BFF5DC", "important");
-            document.getElementById('ordrs').style.setProperty("background-color", "#ffffff", "important");
-            document.getElementById('newOrdrs').style.setProperty("background-color", "#ffffff", "important");
-
-            document.getElementById('dash').style.setProperty("color", "#000000");
-            document.getElementById('cus').style.setProperty("color", "#000000");
-            document.getElementById('itm').style.setProperty("color", "#03a293");
-            document.getElementById('ordrs').style.setProperty("color", "#000000");
-            document.getElementById('newOrdrs').style.setProperty("color", "#000000");
-
-            const mq = window.matchMedia("(max-width:900px)");
-
-            if (mq.matches) {
-                document.getElementById("wrapper").classList.toggle("toggled");
-
-            }
-
-        } else if (anchorId === 'orders') {
-            document.getElementById('dash').style.setProperty("background-color", "#ffffff", "important");
-            document.getElementById('cus').style.setProperty("background-color", "#ffffff", "important");
-            document.getElementById('itm').style.setProperty("background-color", "#ffffff", "important");
-            document.getElementById('ordrs').style.setProperty("background-color", "#BFF5DC", "important");
-            document.getElementById('newOrdrs').style.setProperty("background-color", "#ffffff", "important");
-
-            document.getElementById('dash').style.setProperty("color", "#000000");
-            document.getElementById('cus').style.setProperty("color", "#000000");
-            document.getElementById('itm').style.setProperty("color", "#000000");
-            document.getElementById('ordrs').style.setProperty("color", "#03a293");
-            document.getElementById('newOrdrs').style.setProperty("color", "#000000");
-            const mq = window.matchMedia("(max-width:900px)");
-
-            if (mq.matches) {
-                document.getElementById("wrapper").classList.toggle("toggled");
-
-
-            }
-        } else if (anchorId === 'newOrder') {
-            document.getElementById('dash').style.setProperty("background-color", "#ffffff", "important");
-            document.getElementById('cus').style.setProperty("background-color", "#ffffff", "important");
-            document.getElementById('itm').style.setProperty("background-color", "#ffffff", "important");
-            document.getElementById('ordrs').style.setProperty("background-color", "#ffffff", "important");
-            document.getElementById('newOrdrs').style.setProperty("background-color", "#BFF5DC", "important");
-
-            document.getElementById('dash').style.setProperty("color", "#000000");
-            document.getElementById('cus').style.setProperty("color", "#000000");
-            document.getElementById('itm').style.setProperty("color", "#000000");
-            document.getElementById('ordrs').style.setProperty("color", "#000000");
-            document.getElementById('newOrdrs').style.setProperty("color", "#03a293");
-
-            const mq = window.matchMedia("(max-width:900px)");
-
-            if (mq.matches) {
-                document.getElementById("wrapper").classList.toggle("toggled");
-
-            }
-
-        }
-    }
-
-
-    function loadSection(sectionId) {
-        const sections = ['dashboard', 'customers', 'items', 'orders', 'newOrder'];
-
-        sections.forEach(function (section) {
-            const display = section === sectionId ? 'block' : 'none';
-            document.getElementById(section).style.display = display;
-        });
-
-        const sectionTitles = {
-            dashboard: 'Dashboard',
-            customers: 'Customers',
-            items: 'Items',
-            orders: 'Orders',
-            newOrder: 'NewOrder',
-        };
-
-        document.getElementById('h2Ele').textContent = sectionTitles[sectionId];
-
-        localStorage.setItem('activeSection', sectionId);
-
-
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        const lastActiveSection = localStorage.getItem('activeSection');
-        if (lastActiveSection) {
-            loadSection(lastActiveSection);
-        } else {
-            // Set a default section if no active section is found
-            loadSection('dashboard');
-        }
-    });*/
 
 </script>
 </body>
