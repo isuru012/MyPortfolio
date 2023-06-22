@@ -137,3 +137,32 @@ document.addEventListener('DOMContentLoaded', function () {
         loadSection('dashboard');
     }
 });
+
+var el = document.getElementById("wrapper");
+var toggleButton = document.getElementById("menu-toggle");
+
+toggleButton.onclick = function () {
+    el.classList.toggle("toggled");
+};
+
+var el2 = document.getElementById("wrapper");
+var toggleButton2 = document.getElementById("menu-togle");
+
+toggleButton2.onclick = function () {
+    el2.classList.toggle("toggled");
+};
+
+var myObject = {};
+
+myObject.display = "none";
+
+$(document).ready(function () {
+    $('#example').DataTable({
+        pageLength: 5,
+        lengthMenu: [
+            [5, 10, 25, 50, -1],
+            ['5', '10', '25', '50', 'All']
+        ]
+    });
+
+});

@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
 
 
+
 </head>
 
 <body>
@@ -369,26 +370,26 @@
             <div class="txtCus">
                 <div class="input-group mb-3 myCustxt">
                     <span class="input-group-text txtColour">Item_Name</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input"
+                    <input type="text" class="form-control txtName" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default">
                 </div>
                 <div class="input-group mb-3 myCustxt">
-                    <span class="input-group-text txtColour">Batch_Number</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input"
-                           aria-describedby="inputGroup-sizing-default" disabled>
-                </div>
-                <div class="input-group mb-3 myCustxt ">
-                    <span class="input-group-text txtColour">Quantity_On_Hand</span>
+                    <span class="input-group-text txtColour txtBatch">Batch_Number</span>
                     <input type="number" class="form-control" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default">
                 </div>
                 <div class="input-group mb-3 myCustxt ">
-                    <span class="input-group-text txtColour">Unit_Price</span>
+                    <span class="input-group-text txtColour txtQuantity">Quantity_On_Hand</span>
                     <input type="number" class="form-control" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default">
                 </div>
                 <div class="input-group mb-3 myCustxt ">
-                    <span class="input-group-text txtColour">Discounts</span>
+                    <span class="input-group-text txtColour txtUnit">Unit_Price</span>
+                    <input type="number" class="form-control" aria-label="Sizing example input"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 myCustxt ">
+                    <span class="input-group-text txtColour txtDiscount">Discounts</span>
                     <input type="number" class="form-control" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default">
                 </div>
@@ -402,7 +403,7 @@
                 <button type="button" class="btn btn-outline-warning btnUpd"><i class="fa-solid fa-pencil"
                                                                                 style="color: #ffc107; margin-right: 5px"></i>Update
                 </button>
-                <button type="button" class="btn btn-outline-success btnAdd"><i class="fa-solid fa-plus"
+                <button type="button" class="btn btn-outline-success btnAdd" id="add2"><i class="fa-solid fa-plus"
                                                                                 style="color: #198754;margin-right: 5px"></i>Add
                 </button>
 
@@ -426,7 +427,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
+                      <!--  <tr>
                             <th scope="row">1</th>
                             <td>Pen</td>
                             <td>1</td>
@@ -474,7 +475,7 @@
                             <td>40</td>
                             <td>0</td>
                         </tr>
-
+-->
                         </tbody>
                     </table>
                 </div>
@@ -639,68 +640,12 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../controller/DashboardController.js"></script>
+<script src="../controller/CustomerController.js"></script>
+<script src="../controller/ItemController.js"></script>
+<script src="../controller/NewOrderController.js"></script>
+<script src="../controller/OrderController.js"></script>
 
 <script>
-
-    var rowNumber = 1;
-    var arr = [];
-    var t ;
-
-    $('#add1').click(function() {
-        var cusName=$('.txtName').val();
-        var cusAddress=$('.txtAddress').val();
-        var cusPhonenumber=$('.txtPhoneNumber').val();
-        let customerObject={
-            name:cusName,
-            address:cusAddress,
-            phone:cusPhonenumber
-        }
-        arr.push(customerObject);
-
-      /*  var createTr = $('<tr></tr>');
-        var createTh = $('<th></th>').attr('scope', 'row').text(rowNumber);*/
-        var createTd1 = $('<td></td>').text(customerObject['name']);
-        var createTd2 = $('<td></td>').text(customerObject['address']);
-        var createTd3 = $('<td></td>').text(customerObject['phone']);
-
-
-        let tbody = $('#tbody');
-
-        t=$('#example2').DataTable()
-        t.row.add([rowNumber,customerObject['name'],customerObject['address'],customerObject['phone']]).draw(false);
-
-
-       /* createTr.append(createTh, createTd1, createTd2, createTd3);
-        tbody.append(createTr);
-        console.log(arr);*/
-        rowNumber++;
-    });
-    function addCustomer() {
-
-
-    }
-
-    function addItems() {
-
-    }
-
-    var el = document.getElementById("wrapper");
-    var toggleButton = document.getElementById("menu-toggle");
-
-    toggleButton.onclick = function () {
-        el.classList.toggle("toggled");
-    };
-
-    var el2 = document.getElementById("wrapper");
-    var toggleButton2 = document.getElementById("menu-togle");
-
-    toggleButton2.onclick = function () {
-        el2.classList.toggle("toggled");
-    };
-
-    var myObject = {};
-
-    myObject.display = "none";
 
     /*window.onload = function () {
         document.getElementById("dashboard").style.display = "block";
@@ -710,60 +655,9 @@
         document.getElementById('newOrder').style.display = "none";
     };
 */
-    $(document).ready(function () {
-        $('#example').DataTable({
-            pageLength: 5,
-            lengthMenu: [
-                [5, 10, 25, 50, -1],
-                ['5', '10', '25', '50', 'All']
-            ]
-        });
-
-    });
-    $(document).ready(function () {
-        $('#example2').DataTable({
-            pageLength: 5,
-            lengthMenu: [
-                [5, 10, 25, 50, -1],
-                ['5', '10', '25', '50', 'All']
-            ],
-
-        });
 
 
-    });
-    $(document).ready(function () {
-        $('#example3').DataTable({
-            pageLength: 5,
 
-            lengthMenu: [
-                [5, 10, 25, 50, -1],
-                ['5', '10', '25', '50', 'All']
-            ]
-        });
-    });
-    $(document).ready(function () {
-        $('#example4').DataTable({
-            pageLength: 5,
-            lengthMenu: [
-                [5, 10, 25, 50, -1],
-                ['5', '10', '25', '50', 'All']
-            ]
-
-        });
-
-    });
-    $(document).ready(function () {
-        $('#example6').DataTable({
-            pageLength: 5,
-            lengthMenu: [
-                [5, 10, 25, 50, -1],
-                ['5', '10', '25', '50', 'All']
-            ]
-
-        });
-
-    });
 
 /*
     function anchorClick(anchorId) {
