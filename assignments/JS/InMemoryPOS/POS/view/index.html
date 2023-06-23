@@ -370,7 +370,7 @@
             <div class="txtCus">
                 <div class="input-group mb-3 myCustxt">
                     <span class="input-group-text txtColour">Item_Name</span>
-                    <input type="text" class="form-control txtName" aria-label="Sizing example input"
+                    <input type="text" class="form-control txtNameItem" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default">
                 </div>
                 <div class="input-group mb-3 myCustxt">
@@ -488,17 +488,17 @@
 
                 <div class="input-group mb-3 myCustxt">
                     <span class="input-group-text txtColour">Customer_Name</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input"
+                    <input type="text" class="form-control txtNameNewOrderCustomer" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default">
                 </div>
                 <div class="input-group mb-3 myCustxt">
                     <span class="input-group-text txtColour">Item_Name</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input"
+                    <input type="text" class="form-control txtNameNewOrderItem" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default">
                 </div>
                 <div class="input-group mb-3 myCustxt">
                     <div class="dropdown">
-                        <button class="btn drpbtn dropdown-toggle " type="button" data-bs-toggle="dropdown"
+                        <button id="dropdownButton" class="btn drpbtn dropdown-toggle " type="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                             Batch_Number
                         </button>
@@ -511,18 +511,18 @@
                 </div>
 
                 <div class="input-group mb-3 myCustxt ">
-                    <span class="input-group-text txtColour">Quantity_On_Hand</span>
-                    <input type="number" class="form-control" aria-label="Sizing example input"
+                    <span class="input-group-text txtColour">Quantity_Needed</span>
+                    <input type="number" class="form-control txtQuantityNeeded" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default">
                 </div>
                 <div class="input-group mb-3 myCustxt ">
                     <span class="input-group-text txtColour">Unit_Price</span>
-                    <input type="number" class="form-control" aria-label="Sizing example input"
+                    <input type="number" class="form-control txtNewOrderUnitPrice" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default">
                 </div>
                 <div class="input-group mb-3 myCustxt ">
                     <span class="input-group-text txtColour">Discounts</span>
-                    <input type="number" class="form-control" aria-label="Sizing example input"
+                    <input type="number" class="form-control txtNewOrderDiscount" aria-label="Sizing example input"
                            aria-describedby="inputGroup-sizing-default">
                 </div>
             </div>
@@ -535,7 +535,7 @@
                 <button type="button" class="btn btn-outline-warning btnUpd"><i class="fa-solid fa-pencil"
                                                                                 style="color: #ffc107; margin-right: 5px"></i>Update
                 </button>
-                <button type="button" class="btn btn-outline-success btnAdd"><i class="fa-solid fa-plus"
+                <button type="button" class="btn btn-outline-success btnAdd" id="add3"><i class="fa-solid fa-plus"
                                                                                 style="color: #198754;margin-right: 5px"></i>Add
                 </button>
 
@@ -554,7 +554,7 @@
                             <th scope="col">Item_Name</th>
                             <th scope="col">Batch_Number</th>
                             <th scope="col">Customer_Name</th>
-                            <th scope="col">Quantity_On_Hand</th>
+                            <th scope="col">Quantity_Needed</th>
                             <th scope="col">Unit_Price</th>
                             <th scope="col">Discounts</th>
                         </tr>
@@ -567,7 +567,7 @@
             </div>
             <div class="row justify-content-between ">
                 <div class=" col-12 col-sm-3">
-                    <h3 class="fs-4 mb-3 ms-5">Balance :</h3>
+                    <h3 class="fs-4 mb-3 ms-5 balance">Balance :</h3>
 
                 </div>
                 <div class="col-12 col-sm-3 mb-3 ms-5">
