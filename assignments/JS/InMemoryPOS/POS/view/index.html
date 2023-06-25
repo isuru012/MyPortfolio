@@ -452,7 +452,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
+                        <!--<tr>
                             <th scope="row">1</th>
                             <td>1</td>
                             <td>2023.5.17</td>
@@ -475,7 +475,7 @@
                             <td>6</td>
                             <td>10</td>
                             <td>60</td>
-                        </tr>
+                        </tr>-->
 
 
                         </tbody>
@@ -518,7 +518,7 @@
                 <div class="input-group mb-3 myCustxt ">
                     <span class="input-group-text txtColour">Unit_Price</span>
                     <input type="number" class="form-control txtNewOrderUnitPrice" aria-label="Sizing example input"
-                           aria-describedby="inputGroup-sizing-default">
+                           aria-describedby="inputGroup-sizing-default" disabled>
                 </div>
                 <div class="input-group mb-3 myCustxt ">
                     <span class="input-group-text txtColour">Discounts</span>
@@ -571,8 +571,8 @@
 
                 </div>
                 <div class="col-12 col-sm-3 mb-3 ms-5">
-                    <button type="button" class="btn btn-outline-success btnAdd"><i class="fa-solid fa-plus"
-                                                                                    style="color: #198754;margin-right: 5px"></i>Place_Order
+                    <button type="button" class="btn btn-outline-success btnAdd" id="placeOrder"><i class="fa-solid fa-plus"
+                                                                                    style="color: #198754;margin-right: 5px" ></i>Place_Order
                     </button>
                 </div>
             </div>
@@ -596,6 +596,7 @@
 <script src="../controller/ItemController.js"></script>
 <script src="../controller/NewOrderController.js"></script>
 <script src="../controller/OrderController.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
 

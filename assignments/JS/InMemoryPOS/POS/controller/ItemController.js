@@ -1,6 +1,8 @@
+
+var arr2 = [];
+
 $(document).ready(function() {
     var rowNumber = 1;
-    var arr2 = [];
     var t1;
     var selectedRow = null;
 

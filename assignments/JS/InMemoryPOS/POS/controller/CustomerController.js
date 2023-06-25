@@ -1,6 +1,8 @@
+
+var arr = [];
 $(document).ready(function() {
     var rowNumber2 = 1;
-    var arr = [];
+
     var t;
     var selectedRow = null;
 
@@ -22,6 +24,8 @@ $(document).ready(function() {
 
         rowNumber2++;
     });
+
+
 
     $('#example2').DataTable({
         pageLength: 5,
@@ -106,3 +110,4 @@ $(document).ready(function() {
         }
     });
 });
+
