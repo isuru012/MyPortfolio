@@ -5,6 +5,7 @@
     --second-bg-color: #c1efde;
 }
 
+
 .primary-text {
     color: var(--main-text-color);
 }
@@ -100,6 +101,9 @@
 
 table {
     box-shadow: 1px 4px 14px 1px rgba(0, 0, 0, 0.2) !important;
+}
+.invalid {
+    border: 5px solid red;
 }
 
 table > tbody > tr:nth-child(odd) {
