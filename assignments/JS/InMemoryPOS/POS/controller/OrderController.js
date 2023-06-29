@@ -4,8 +4,8 @@ $('#placeOrder').click(function() {
     // Get the entered values
     var itemName = $('.txtNameNewOrderItem').val();
     var batchNumber = selectedBatchNumber;
-    var quantityPurchased = $('.txtQuantityNeeded').val();
-    var sellingUnitPrice = $('.txtNewOrderUnitPrice').val();
+    var quantityPurchased = quantityNeeded;
+    var sellingUnitPrice = unitPrice;
     var totalPrice = quantityPurchased * sellingUnitPrice;
 
     // Generate order ID and date

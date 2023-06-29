@@ -164,12 +164,14 @@ var rowNumber3 = 1;
 var arr4 = [];
 var t3;
 var balance = 0;
+var quantityNeeded;
+var unitPrice;
 
 $('#add3').click(function () {
     var itemName = $('.txtNameNewOrderItem').val();
     var customerName = $('.txtNameNewOrderCustomer').val();
-    var quantityNeeded = $('.txtQuantityNeeded').val();
-    var unitPrice = $('.txtNewOrderUnitPrice').val();
+     quantityNeeded = $('.txtQuantityNeeded').val();
+    unitPrice = $('.txtNewOrderUnitPrice').val();
     var discount = $('.txtNewOrderDiscount').val();
 
     let newOrderObject = {

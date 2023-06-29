@@ -110,7 +110,7 @@ $(document).ready(function() {
         }
     });
 
-    const inputName = document.querySelector("#txtName");
+    /*const inputName = document.querySelector("#txtName");
     const inputAddress = document.querySelector("#txtAddress");
     const inputPhoneNumber = document.querySelector("#txtPhoneNumber");
 
@@ -146,7 +146,7 @@ $(document).ready(function() {
             inputPhoneNumber.style.borderColor = "black";
         }
     });
-
+*/
     /*function validateName() {
         var nameInput = $('.txtName');
         var name = nameInput.val();
