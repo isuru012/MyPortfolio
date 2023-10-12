@@ -28,111 +28,137 @@ ScrollReveal({reset: true});
 
 
 ScrollReveal().reveal(document.getElementById("welcomeImage"), {
-    delay: 100, origin: "right",
-     duration: 1000, reset: false
+   origin: "right",
+    distance:"100%",
+     duration: 1000
 });
 
 ScrollReveal().reveal(document.getElementsByClassName("left1"), {
-    delay: 100, origin: "left",
-    duration: 1000, reset: false
+    origin: "left",
+    distance:"100%",
+    duration: 1000
 });
 
 ScrollReveal().reveal(document.getElementsByClassName("aboutmeImage"), {
-    delay: 100, origin: "bottom",
+    origin: "left",
+    distance:"100%",
     duration: 1000
 });
 
 ScrollReveal().reveal(document.getElementsByClassName("aboutme"), {
-    delay: 100, origin: "right",
+    origin: "right",
+    distance:"100%",
     duration: 1000
 });
 
 ScrollReveal().reveal(document.getElementsByClassName("aboutmepara"), {
-    delay: 100, origin: "bottom",
+    origin: "bottom",
+    distance:"100%",
      duration: 1000
 });
 
 ScrollReveal().reveal(document.getElementsByClassName("educationh1"), {
-    delay: 100, origin: "left",
+    origin: "top",
+    distance:"100%",
      duration: 1000
 });
 
 ScrollReveal().reveal(document.getElementsByClassName("leftImageEdu"), {
-    delay: 100, origin: "left",
-    duration: 1000, interval: 200
+    origin: "top",
+    distance:"100%",
+    duration: 1000,
 });
 
 ScrollReveal().reveal(document.getElementsByClassName("rightEdu"), {
-    delay: 100, origin: "right",
+    origin: "bottom",
+    distance:"100%",
      duration: 1000, interval: 200
 });
 
 ScrollReveal().reveal(document.getElementsByClassName("workh1"), {
-    delay: 100, origin: "left",
+    origin: "bottom",
+    distance:"100%",
     duration: 1000
 });
 
 ScrollReveal().reveal(document.getElementsByClassName("workpara"), {
-    delay: 100, origin: "bottom",
+     origin: "bottom",
+    distance:"100%",
     duration: 1000
 });
 
 ScrollReveal().reveal(document.getElementsByClassName("workammount"), {
-    delay: 100, origin: "bottom",
-    duration: 1000, interval: 200
+    origin: "bottom",
+    distance:"100%",
+    duration: 1000,
 });
 
 ScrollReveal().reveal(document.getElementsByClassName("projectsh1"), {
-    delay: 100, origin: "left",
+    origin: "left",
+    distance:"100%",
     duration: 1000
 });
 ScrollReveal().reveal(document.getElementsByClassName("projectdivg1"), {
-    delay: 100, origin: "left",
+    origin: "left",
+    distance:"100%",
      duration: 1000
 });
 ScrollReveal().reveal(document.getElementsByClassName("projectdivg3"), {
-    delay: 100, origin: "right",
+     origin: "right",
+    distance:"100%",
      duration: 1000
 });
 
 ScrollReveal().reveal(document.getElementsByClassName("projectdivg2"), {
-    delay: 100, origin: "bottom",
+    origin: "bottom",
+    distance:"100%",
  duration: 1000
 });
 
 ScrollReveal().reveal(document.getElementsByClassName("certificatesh1"), {
-    delay: 100, origin: "left",
+    origin: "left",
+    distance:"100%",
      duration: 1000
 });
 
-ScrollReveal().reveal(document.getElementsByClassName("galleryh1"), {
-    delay: 100, origin: "left",
+/*ScrollReveal().reveal(document.getElementsByClassName("galleryh1"), {
+    origin: "left",
     duration: 1000
 });
 
 ScrollReveal().reveal(document.getElementsByClassName("gall1"), {
-    delay: 100, origin: "top",
-     duration: 1000, interval: 200
+    delay:100,
+    origin: "top",
+    distance:"100%",
+     duration: 1000
 });
 ScrollReveal().reveal(document.getElementsByClassName("gall4"), {
-    delay: 100, origin: "bottom",
-    duration: 1000, interval: 200
+    delay:100,
+    origin: "right",
+    distance:"100%",
+    duration: 1000
 });
 
 ScrollReveal().reveal(document.getElementsByClassName("contacth1"), {
-    delay: 100, origin: "left",
+    delay:100,
+     origin: "left",
+    distance:"100%",
    duration: 1000
 });
 
 ScrollReveal().reveal(document.getElementsByClassName("form-group"), {
-    delay: 100, origin: "bottom",
-    duration: 1000, interval: 200
+    delay:100,
+    origin: "left",
+    distance:"100%",
+    duration: 1000
 });
 
 ScrollReveal().reveal(document.getElementsByClassName("contact-info"), {
-    delay: 100, origin: "right",
-    duration: 1000, interval: 200
-});
+    delay:100,
+    origin: "right",
+    distance:"100%",
+    duration: 1000
+});*/
 
 function openPopup() {
 
@@ -237,8 +263,9 @@ function sendConfirmation() {
 }
 var sr = ScrollReveal();
 
+/*
 sr.reveal('.galleryh1', {
     mobile: {
         reveal: false
     }
-});
+});*/
