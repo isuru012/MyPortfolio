@@ -356,7 +356,7 @@
         });
     }
 
-    window.addEventListener('load', function () {
+    /*window.addEventListener('load', function () {
         // Check if the screen width is below 500px
         var isSmallScreen = window.innerWidth < 500;
 
@@ -381,9 +381,9 @@
                 startCount();
             }, 2000);  // 1 minute in milliseconds
         }
-    });
+    });*/
 
-    /*var animationTriggered = false;
+    var animationTriggered = false;
     window.addEventListener('scroll', function () {
         if (!animationTriggered && isInViewport(document.querySelector('.rowWork'))) {
             startCount();
@@ -395,7 +395,7 @@
 
         }
 
-    });*/
+    });
 
     function isInViewport(element) {
         var rect = element.getBoundingClientRect();
