@@ -261,7 +261,7 @@ function sendConfirmation() {
         message => alert("Done")
     );
 }
-var sr = ScrollReveal();
+// var sr = ScrollReveal();
 
 /*
 sr.reveal('.galleryh1', {
