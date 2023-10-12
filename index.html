@@ -65,7 +65,7 @@
         <div class="row">
             <div class="left1">
 
-                <h1>I am <span class="auto-input"></span></h1>
+                <h1 id="typed-heading" >I am <span class="auto-input"></span></h1>
 
                 <p>With expertise in both video editing and full-stack development, I deliver captivating content
                     and seamless web experiences. Browse my portfolio to discover my range of skills and projects.</p>
@@ -341,6 +341,26 @@
     });
 </script>
 <script>
+    const handleIntersection = (entries) => {
+        entries.forEach((entry) => {
+            // Check if the element is in the viewport
+            if (entry.isIntersecting) {
+                typed.start();  // Start Typed.js when in viewport
+            } else {
+                typed.stop();   // Stop Typed.js when not in viewport
+            }
+        });
+    };
+
+    // Target the Typed heading
+    const typedHeading = document.getElementById('typed-heading');
+
+    // Create a new Intersection Observer
+    const observer = new IntersectionObserver(handleIntersection);
+
+    // Observe the Typed heading
+    observer.observe(typedHeading);
+
     var typed = new Typed(".auto-input", {
         strings: ["Isuru Dulakshana", "Full Stack Developer", "Video Editor"],
         typeSpeed: 50,
