@@ -356,13 +356,13 @@
         });
     }
 
-    /*window.addEventListener('load', function () {
+    window.addEventListener('load', function () {
         // Check if the screen width is below 500px
         var isSmallScreen = window.innerWidth < 500;
-
+        var animationTriggered = false;
         // Start the count immediately if the screen width is not below 500px
         if (!isSmallScreen) {
-            var animationTriggered = false;
+
             window.addEventListener('scroll', function () {
                 if (!animationTriggered && isInViewport(document.querySelector('.rowWork'))) {
                     startCount();
@@ -376,14 +376,26 @@
 
             });
         } else {
-            // For screens below 500px width, start the count after 1 minute
+            !// For screens below 500px width, start the count after 1 minute
             setTimeout(function () {
                 startCount();
             }, 2000);  // 1 minute in milliseconds
-        }
-    });*/
+  /*          window.addEventListener('scroll', function () {
+                if (!animationTriggered && isInViewport(document.querySelector('.rowWork'))) {
+                    startCount();
+                    animationTriggered = true;
+                }
+                if (animationTriggered && !isInViewport(document.querySelector('.rowWork'))) {
+                    resetCountValues();
+                    animationTriggered = false;
 
-    var animationTriggered = false;
+                }
+
+            });*/
+        }
+    });
+
+    /*var animationTriggered = false;
     window.addEventListener('scroll', function () {
         if (!animationTriggered && isInViewport(document.querySelector('.rowWork'))) {
             startCount();
@@ -396,7 +408,7 @@
         }
 
     });
-
+*/
     function isInViewport(element) {
         var rect = element.getBoundingClientRect();
         var html = document.documentElement;
