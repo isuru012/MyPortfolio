@@ -52,7 +52,7 @@ ScrollReveal().reveal(document.getElementsByClassName("aboutme"), {
 });
 
 ScrollReveal().reveal(document.getElementsByClassName("aboutmepara"), {
-    origin: "bottom",
+    origin: "right",
     distance:"100%",
      duration: 1000
 });
@@ -169,58 +169,9 @@ function openPopup() {
 }
 
 
-function startCount() {
-    var counters = document.querySelectorAll('.count');
-    var speed = 1000;
 
-    counters.forEach(function (counter) {
-        var updateCount = function () {
-            var target = +counter.getAttribute('data-count');
-            var count = +counter.innerText;
-            var inc = target / speed;
 
-            if (count < target) {
-                counter.innerText = Math.ceil(count + inc);
-                setTimeout(updateCount, 100);
-            } else {
-                counter.innerText = target;
-            }
-        };
-        updateCount();
-    });
-}
 
-var animationTriggered = false;
-window.addEventListener('scroll', function () {
-    if (!animationTriggered && isInViewport(document.querySelector('.rowWork'))) {
-        startCount();
-        animationTriggered = true;
-    }
-    if (animationTriggered && !isInViewport(document.querySelector('.rowWork'))) {
-        resetCountValues();
-        animationTriggered = false;
-
-    }
-
-});
-
-function isInViewport(element) {
-    var rect = element.getBoundingClientRect();
-    var html = document.documentElement;
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || html.clientHeight) &&
-        rect.right <= (window.innerWidth || html.clientWidth)
-    );
-}
-
-function resetCountValues() {
-    var counters = document.querySelectorAll('.count');
-    counters.forEach(function (counter) {
-        counter.innerText = 1;
-    });
-}
 
 window.addEventListener('load', function () {
     // Hide the loading animation after 2 seconds
